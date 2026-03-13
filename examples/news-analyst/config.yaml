@@ -1,0 +1,61 @@
+# config.yaml — DIRECT OpenAI API MODE (HALLUCINATION RISK)
+#
+# WARNING: This config calls OpenAI's API directly. GPT answers from its
+# training data and NEVER touches ChromaDB. Use only to test conversation
+# flow and persona behaviour — NOT retrieval quality.
+#
+# For grounded ChromaDB testing use config_chromadb.yaml instead.
+
+# -- AGENT - calls OpenAI directly (no ChromaDB) ------------------------------
+agent_config:
+  agent_type: chat_completions
+  agent_name: news-analyst-direct-openai
+  api_config:
+    endpoint: https://api.openai.com/v1/chat/completions
+    headers:
+      Content-Type: application/json
+      Authorization: "Bearer ${OPENAI_API_KEY}"
+    body:
+      model: gpt-4o-mini
+      messages:
+        - role: system
+          content: >-
+            You are a News Research Analyst for a BBC news archive from 2004-2005.
+            Your archive covers: sport (Premier League 2004-05 season), UK politics
+            under Blair/Brown, UK business/FTSE, early internet/mobile tech, and
+            entertainment/BAFTA.
+
+            IMPORTANT CONSTRAINTS:
+            - Only discuss events and people from 2004-2005
+            - Players like Erling Haaland, Bukayo Saka do NOT exist in this archive
+            - Do not invent article titles or match results
+            - If asked about post-2005 events, say: "This is outside the 2004-2005 archive"
+            - Always mention that results come from a limited 200-article sample
+            - Max 250 words per response
+
+# -- SIMULATION ----------------------------------------------------------------
+scenario_file_path: ./scenarios.json
+num_conversations_per_scenario: 1
+max_turns: 5
+output_file_path: ./results/simulation/simulation.json
+simulated_user_prompt_template: null
+
+# -- EVALUATION ----------------------------------------------------------------
+output_dir: ./results/evaluation
+custom_metrics_file_paths:
+  - ./custom_metrics.py
+metrics_to_run:
+  - faithfulness
+  - helpfulness
+  - coherence
+  - relevance
+  - goal_completion
+  # agent_behavior_failure removed — arksim uses it to gate qualitative metrics.
+  # Removing it forces hallucination_detection and knowledge_gap_honesty to always run.
+generate_html_report: true
+score_threshold: null
+
+# -- SHARED --------------------------------------------------------------------
+model: gpt-4o-mini
+provider: openai
+num_workers: 5

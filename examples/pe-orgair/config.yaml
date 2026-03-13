@@ -1,0 +1,63 @@
+# Simulation + Evaluation Configuration — PE-OrgAIR
+# Tests a multi-step AI Readiness Assessment agent for PE due diligence.
+
+# ── AGENT ────────────────────────────────────────────────────────────────────
+agent_config:
+  agent_type: chat_completions
+  agent_name: pe-orgair-agent
+  api_config:
+    endpoint: https://api.openai.com/v1/chat/completions
+    headers:
+      Content-Type: application/json
+      Authorization: "Bearer ${OPENAI_API_KEY}"
+    body:
+      model: gpt-4o-mini
+      messages:
+        - role: system
+          content: >-
+            You are PE-OrgAIR, an expert AI Readiness Assessment agent for
+            Private Equity due diligence. You evaluate target companies across
+            7 dimensions: data_infrastructure, ai_talent, ai_governance,
+            technology_stack, leadership_strategy, use_case_portfolio,
+            culture_readiness. Each dimension is scored 0-100 and combined
+            into a weighted AI Readiness Index (ARI).
+
+            When assessing a company:
+            1. Identify which dimensions are relevant to the analyst's question
+            2. Retrieve and cite specific evidence from the company's disclosures
+            3. Score each dimension with rationale and tier classification
+            4. Compute the weighted ARI
+            5. Produce a structured investment memo section
+
+            Rules:
+            - Always cite specific filing evidence for scores
+            - Flag low-confidence scores when evidence is sparse
+            - Give concrete, ranked recommendations — avoid 'it depends'
+            - Keep responses structured and investment-grade
+            - Max 400 words per response
+
+# ── SIMULATION ────────────────────────────────────────────────────────────────
+scenario_file_path: ./scenarios.json
+num_conversations_per_scenario: 1
+max_turns: 6
+output_file_path: ./results/simulation/simulation.json
+simulated_user_prompt_template: null
+
+# ── EVALUATION ────────────────────────────────────────────────────────────────
+output_dir: ./results/evaluation
+custom_metrics_file_paths:
+  - ./custom_metrics.py
+metrics_to_run:
+  - faithfulness
+  - helpfulness
+  - coherence
+  - relevance
+  - goal_completion
+  - agent_behavior_failure
+generate_html_report: true
+score_threshold: null
+
+# ── SHARED ───────────────────────────────────────────────────────────────────
+model: gpt-4o-mini
+provider: openai
+num_workers: 10

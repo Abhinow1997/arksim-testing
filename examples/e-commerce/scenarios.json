@@ -1,0 +1,225 @@
+{
+    "schema_version": "v1",
+    "scenarios": [
+        {
+            "scenario_id": "return_missing_details",
+            "user_id": "user_0000",
+            "goal": "You are a returning customer and want to return an item you bought recently. You don't remember your order ID and you don't volunteer a reason for the return up front. If the agent asks for your order ID, say you can't find the confirmation email and ask if they can look it up by your name or email. Only share the reason (it was a duplicate purchase) if the agent specifically asks why you want to return it.",
+            "agent_context": "Walmart online shopping platform is a b2c e-commerce platform that allows users to buy products from Walmart. Shop groceries, everyday essentials, and millions of general-merchandise items on Walmart.com or the Walmart app—anytime, from anywhere.",
+            "user_profile": "You are Jasmine Rivera who is open to experience, conscientious, introverted, agreeable, and neurotic. You are a 27-year-old Hispanic woman living in Brooklyn, NY, a postgraduate-educated, intuitive decision-maker and Republican-leaning Buddhist who manages a household of more than four people on a $30,000–$49,999 income. As a returning customer to Walmart's online platform, you tend to be quality oriented and have no trouble spending money when you feel confident in the value, especially during major sales events where you typically budget $500–$800 per quarter on electronics, small appliances, and seasonal items. You discovered Walmart through a third-party website, and while you're generally disloyal to any single retailer, you will come back when prices, convenience, and product quality align with your expectations. You prefer a smooth, efficient shopping experience that lets you quickly compare options, read reviews, and make intuitive choices that fit your household's needs without unnecessary hassle or pressure.",
+            "knowledge": [
+                {
+                    "content": "Product details\n\nOrganize your space efficiently with this versatile M MZG 5-tier metal wire shelving unit. Perfect for basements, warehouses, kitchens, garages, and laundry rooms, this storage rack offers ample space for all your belongings. The durable chrome finish adds a sleek look while providing long-lasting use. Each shelf is adjustable in 1-inch increments, allowing for customized storage solutions without the need for any tools. Equipped with adjustable leveling feet, this unit ensures stability on various surfaces, making it a practical and adaptable storage solution for any area of your home or workspace. Metal wire shelving unit 5 tiers Dimensions: 15.8 inches deep x 45.3 inches wide x 70.4 inches high Chrome finish Suitable for basement, warehouse, kitchen, garage, and laundry Shelves are adjustable in 1-inch increments No tools required for assembly Features adjustable leveling feet\n\nSpecifications\n\nHeight 70.4 in Number of shelves 5 Adjustable shelves Y Maximum load weight per shelf 350 lb\n\nWarranty\n\nWarranty information Please be aware that the warranty terms on items offered for sale by third party Marketplace sellers may differ from those displayed in this section (if any). To confirm warranty terms on an item offered for sale by a third party Marketplace seller, please use the 'Contact seller' feature on the third party Marketplace seller's information page and request the item's warranty terms prior to purchase."
+                }
+            ],
+            "origin": {
+                "goal_raw": "Return an item without providing order ID or reason",
+                "target_agent_capability": "collecting missing information for returns processing",
+                "user_attributes": {
+                    "sex": "Female",
+                    "education": "Postgraduate",
+                    "race": "Hispanic",
+                    "marital_status": "widowed",
+                    "religion": "Buddhist",
+                    "Household_income": "$30,000 - $49,999",
+                    "political_affiliation": "Republican",
+                    "household_size": "more than 4",
+                    "Openness": "open to experience",
+                    "Conscientiousness": "conscientious",
+                    "Extraversion": "introverted",
+                    "Agreeableness": "agreeable",
+                    "Neuroticism": "neurotic",
+                    "age": "27",
+                    "citizenship": "United States",
+                    "location": "Brooklyn, NY, USA",
+                    "name": "Jasmine Rivera",
+                    "email": "jasmine.rivera27@gmail.com",
+                    "phone": "347-809-1632",
+                    "customer_type": "returning customer",
+                    "discovery_type": "third party website",
+                    "decision_making_style": "intuitive",
+                    "purchasing_preference": "quality oriented",
+                    "spending_behavior": "no trouble spending money",
+                    "loyalty_level": "disloyal",
+                    "budget": "$500–$800 per quarter on electronics, small appliances, and seasonal items during major sales events"
+                }
+            }
+        },
+        {
+            "scenario_id": "wrong_item_received",
+            "user_id": "user_0001",
+            "goal": "You ordered a Shark CarpetXpert carpet cleaner from Walmart but received a completely different product — a generic handheld vacuum that looks nothing like what you ordered. You are frustrated and want an immediate replacement shipped to you, not a refund. Tell the agent: 'I got the wrong item and I need the right one sent out today.' If the agent asks you to return the wrong item first before they can send a replacement, push back and say you shouldn't have to wait because this was their mistake. If the agent offers a refund instead of a replacement, reject it and insist on getting the product you actually ordered.",
+            "agent_context": "Walmart online shopping platform is a b2c e-commerce platform that allows users to buy products from Walmart. Shop groceries, everyday essentials, and millions of general-merchandise items on Walmart.com or the Walmart app—anytime, from anywhere.",
+            "user_profile": "You are Marcus Johnson who is closed to experience, conscientious, extroverted, antagonistic, and emotionally stable. You are a 45-year-old married Black man living in Atlanta, GA, with a household of four and a combined income in the $75,000–$99,999 range. You have a bachelor's degree and work as a facilities manager at a commercial property company. You are a returning Walmart customer who originally found the platform through a friend's recommendation.\n\nYou are direct and no-nonsense in communication. When something goes wrong, you expect quick resolution without runaround. You don't lose your temper easily, but you are firm and will not accept being pushed toward a solution that doesn't work for you. You are quality oriented and chose the Shark CarpetXpert specifically after researching it, so a refund and reorder is not acceptable — you want the exact product you paid for. You are moderately loyal to retailers that treat you fairly, but one bad experience with order fulfillment can lose your business permanently.",
+            "knowledge": [
+                {
+                    "content": "Product details\n\nMeet the Shark CarpetXpert with Stainstriker Technology, 2-in-1 upright deep carpet cleaner and built-in StainStriker spot & stain eliminator, combines Shark's powerful suction & PowerSpray high pressure spray to deliver unbeatable carpet cleaning and the best tough stain elimination. Two unique chemicals mix and activate on contact in the built-in tool to deliver 20X more stain-striking power and instant odor removal on carpets, area rugs, upholstery and more. Includes a 3.5 inch reversible bristle stain tool, integrated crevice tool, 12oz Shark CarpetXpert Deep Clean Pro formula and 16oz Shark StainStriker OXY Multiplier formula.\n\nKey Features:\n- UNBEATABLE DEEP CARPET CLEANING: Shark's powerful suction and deep-cleaning innovation delivers unbeatable deep carpet cleaning along with the best tough stain elimination results\n- HANDHELD SPOT & STAIN ELIMINATOR: The first and only deep carpet cleaners with a built-in spot and stain remover designed to extend and clean stairs, carpet, upholstery and other isolated stains\n- STAINSTRIKER TECHNOLOGY: Two unique chemicals mix and activate on contact in the built-in handheld tool unleashing the power of OXY for 20X more stain-striking power leaving behind a fresh scent\n- REMOVES ODORS: Instantly and permanently removes odors, including pet urine and smoke\n- ULTRA-FAST DRY TIMES: Shark's CarpetXpert technology and powerful suction deliver ultra-fast dry times using dry-only mode without over soaking your carpets\n\nSpecifications\n\nWeight 16.98 lb Has written warranty Yes Recommended surface Carpet, Upholstery Rec. use Residential\n\nWarranty information Five (5) Year Limited Warranty\n\nOrder details: Order #WM-8834291, placed 12 days ago, delivered 5 days ago. Item received: Generic handheld vacuum (not what was ordered)."
+                }
+            ],
+            "origin": {
+                "goal_raw": "Resolve a wrong item received in an order",
+                "target_agent_capability": "complaint handling and order correction",
+                "user_attributes": {
+                    "sex": "Male",
+                    "education": "Bachelor's degree",
+                    "race": "Black",
+                    "marital_status": "married",
+                    "religion": "Protestant",
+                    "Household_income": "$75,000 - $99,999",
+                    "political_affiliation": "Independent",
+                    "household_size": "4",
+                    "Openness": "closed to experience",
+                    "Conscientiousness": "conscientious",
+                    "Extraversion": "extroverted",
+                    "Agreeableness": "antagonistic",
+                    "Neuroticism": "emotionally stable",
+                    "age": "45",
+                    "citizenship": "United States",
+                    "location": "Atlanta, GA, USA",
+                    "name": "Marcus Johnson",
+                    "email": "marcus.j.atl@gmail.com",
+                    "phone": "470-555-3218",
+                    "customer_type": "returning customer",
+                    "discovery_type": "friend recommendation",
+                    "decision_making_style": "rational",
+                    "purchasing_preference": "quality oriented",
+                    "spending_behavior": "no trouble spending money",
+                    "loyalty_level": "neutral",
+                    "budget": "$200–$400 per month on household goods and cleaning equipment"
+                }
+            }
+        },
+        {
+            "scenario_id": "product_recommendation",
+            "user_id": "user_0002",
+            "goal": "You are a first-time Walmart online customer looking for a laptop for your teenager who is starting college. You have narrowed it down to two options but cannot decide. Tell the agent: 'I'm looking at two laptops and I just need someone to tell me which one to buy — I don't have time to compare every spec.' You want the agent to give you a clear, direct recommendation, not a list of pros and cons for each. If the agent tries to ask you a lot of questions about usage or preferences, get impatient and say your kid just needs it for schoolwork, nothing fancy. You have a hard budget of $500 and will not go over it.",
+            "agent_context": "Walmart online shopping platform is a b2c e-commerce platform that allows users to buy products from Walmart. Shop groceries, everyday essentials, and millions of general-merchandise items on Walmart.com or the Walmart app—anytime, from anywhere.",
+            "user_profile": "You are Patricia Owens who is closed to experience, conscientious, introverted, agreeable, and neurotic. You are a 52-year-old married White woman living in Columbus, OH, in a household of three. You have a high school diploma and work as a billing coordinator at a medical practice with about 50 employees. Your household income is in the $50,000–$74,999 range, and you lean Democrat politically. You identify as Methodist.\n\nYou are a cautious, practical shopper who dislikes being overwhelmed with choices. You found Walmart's online platform through a television advertisement and are trying it for the first time because your local store didn't have the laptops in stock. You prefer clear, simple answers and get frustrated when salespeople give you too many options instead of just telling you what to buy. You are discount oriented and very careful with money, often agonizing over purchases. Once you trust a retailer, you tend to be very loyal. You want to feel confident that you're making a sensible choice without overpaying.",
+            "knowledge": [
+                {
+                    "content": "Product Comparison: Two Laptop Options\n\nOption A: HP 15.6\" Laptop, Intel Core i3-1215U, 8GB RAM, 256GB SSD, Windows 11 Home\n\nThe HP 15.6\" laptop features a full HD display, Intel Core i3-1215U processor with 6 cores, 8GB DDR4 RAM, and a 256GB PCIe NVMe SSD. Designed for everyday computing, it handles web browsing, document editing, video streaming, and light multitasking with ease. The laptop includes a built-in HD webcam, dual speakers with Audio by B&O, Wi-Fi 6, Bluetooth 5.2, and a variety of ports including USB-C, USB-A, and HDMI. Battery life is rated up to 7 hours and 15 minutes. Weight: 3.73 lbs. Color: Natural Silver.\n\nSpecifications: Display 15.6\" Full HD (1920x1080) | Processor Intel Core i3-1215U | RAM 8GB DDR4 | Storage 256GB SSD | OS Windows 11 Home | Battery Up to 7h 15min | Weight 3.73 lbs\n\nPrice: $329.00\nCustomer Rating: 4.3/5 (1,247 reviews)\nWarranty: 1-Year Limited Hardware Warranty\n\n---\n\nOption B: Lenovo IdeaPad 1 15.6\" Laptop, AMD Ryzen 5 7520U, 8GB RAM, 512GB SSD, Windows 11 Home\n\nThe Lenovo IdeaPad 1 features a 15.6\" Full HD display powered by an AMD Ryzen 5 7520U processor with 4 cores. It comes with 8GB LPDDR5 RAM and a larger 512GB PCIe SSD for more storage. The laptop includes a 720p HD webcam with privacy shutter, Dolby Audio speakers, Wi-Fi 6, Bluetooth 5.1, and USB-C, USB-A, HDMI, and SD card reader ports. Battery life is rated up to 10 hours. Weight: 3.59 lbs. Color: Cloud Grey.\n\nSpecifications: Display 15.6\" Full HD (1920x1080) | Processor AMD Ryzen 5 7520U | RAM 8GB LPDDR5 | Storage 512GB SSD | OS Windows 11 Home | Battery Up to 10h | Weight 3.59 lbs\n\nPrice: $449.00\nCustomer Rating: 4.5/5 (892 reviews)\nWarranty: 1-Year Manufacturer's Warranty"
+                }
+            ],
+            "origin": {
+                "goal_raw": "Get a product recommendation between two similar items",
+                "target_agent_capability": "product guidance and needs assessment",
+                "user_attributes": {
+                    "sex": "Female",
+                    "education": "High school diploma",
+                    "race": "White",
+                    "marital_status": "married",
+                    "religion": "Methodist",
+                    "Household_income": "$50,000 - $74,999",
+                    "political_affiliation": "Democrat",
+                    "household_size": "3",
+                    "Openness": "closed to experience",
+                    "Conscientiousness": "conscientious",
+                    "Extraversion": "introverted",
+                    "Agreeableness": "agreeable",
+                    "Neuroticism": "neurotic",
+                    "age": "52",
+                    "citizenship": "United States",
+                    "location": "Columbus, OH, USA",
+                    "name": "Patricia Owens",
+                    "email": "p.owens52@yahoo.com",
+                    "phone": "614-555-8743",
+                    "customer_type": "new prospect",
+                    "discovery_type": "television advertisement",
+                    "decision_making_style": "intuitive",
+                    "purchasing_preference": "discount oriented",
+                    "spending_behavior": "trouble spending money",
+                    "loyalty_level": "loyal",
+                    "budget": "$500 hard limit for a college laptop"
+                }
+            }
+        },
+        {
+            "scenario_id": "order_tracking_delayed",
+            "user_id": "user_0003",
+            "goal": "You placed an order for a LINSY HOME pull-out sofa bed 10 days ago. The tracking status has said 'Shipped' for 8 days but the item has not arrived and the tracking number shows no updates since it left the warehouse. You are anxious because you are moving into a new apartment this weekend and this is your only couch. Tell the agent: 'My order says shipped but it's been over a week with no updates — I need to know where it is or I need a new one sent immediately.' If the agent says to wait a few more days, push back firmly and say you cannot wait because you are moving in 3 days and have no furniture. If they cannot guarantee delivery by your move-in date, demand either expedited reshipment or a full refund so you can buy elsewhere. You are willing to escalate to a supervisor if the first agent cannot resolve this.",
+            "agent_context": "Walmart online shopping platform is a b2c e-commerce platform that allows users to buy products from Walmart. Shop groceries, everyday essentials, and millions of general-merchandise items on Walmart.com or the Walmart app—anytime, from anywhere.",
+            "user_profile": "You are Anil Kapoor who is open to experience, unconscientious, extroverted, agreeable, and neurotic. You are a 31-year-old single South Asian man living in Austin, TX, and a naturalized U.S. citizen originally from India. You have a master's degree in computer science and work as a software engineer at a mid-size tech company. Your household income is in the $100,000–$149,999 range and you live alone. You identify as Hindu and lean Independent politically.\n\nYou discovered Walmart's online platform through search engine results and have made a few purchases before, making you a returning customer. You are generally easygoing and friendly with customer service, but you become anxious and persistent when something affects your living situation. You tend to over-explain your situation because you worry about not being taken seriously. You are quality oriented and chose this specific sofa after extensive research, so you don't want to settle for a different product. You have no trouble spending money when you've made a decision, but you expect the service to match the price. You are not particularly loyal to any retailer and will switch immediately if you feel the issue is not being handled promptly.",
+            "knowledge": [
+                {
+                    "content": "Product details\n\nLINSY HOME V-Shaped Pull-Out Sofa Bed — the perfect combination of comfort, functionality, and modern design. More than just a sectional couch, it easily transforms into a comfortable sofa bed within seconds, offering an ideal solution for overnight guests, movie nights, or daily lounging. With spacious built-in storage compartments and a user-friendly modular design, it's made to fit seamlessly into your ever-changing lifestyle.\n\nFeatures ultra-soft plush corduroy fabric that's breathable, pet-friendly, and resistant to wrinkles and pilling. The luxurious high-density sponge and cotton filling, combined with a sturdy solid wood and metal frame, ensure long-lasting comfort and durability. The upgraded 7-inch wide armrests are equipped with built-in USB and Type-C charging ports, convenient side storage pockets, and cup holders on both sides.\n\nProduct Specifications:\nItem Name: Linsy Home 81\" Plush Corduroy Sleeper Sofa Bed with Storage Chaise\nDimensions: 81\"L x 81\"W x 34\"H\nSeating Capacity: 6-7\nMaterial: 100% Polyester Plush Corduroy\nFrame Material: Solid Wood + Metal\nAvailable Colors: Green, Dark Grey, Beige, Navy Blue\nMaximum load weight: 1200 lb\nWarranty: 5-Year Warranty\n\nNote: This pull out couch bed is delivered in 4 boxes, which may arrive at different times.\n\nOrder details: Order #WM-7720156, placed 10 days ago. Tracking status: 'Shipped' — last scan at regional distribution center 8 days ago, no updates since. Estimated delivery was 5 days ago. Color ordered: Dark Grey. Price paid: $849.99."
+                }
+            ],
+            "origin": {
+                "goal_raw": "Resolve a delayed order with stalled tracking",
+                "target_agent_capability": "delivery issue resolution and managing customer expectations",
+                "user_attributes": {
+                    "sex": "Male",
+                    "education": "Postgraduate",
+                    "race": "South Asian",
+                    "marital_status": "single",
+                    "religion": "Hindu",
+                    "Household_income": "$100,000 - $149,999",
+                    "political_affiliation": "Independent",
+                    "household_size": "1",
+                    "Openness": "open to experience",
+                    "Conscientiousness": "unconscientious",
+                    "Extraversion": "extroverted",
+                    "Agreeableness": "agreeable",
+                    "Neuroticism": "neurotic",
+                    "age": "31",
+                    "citizenship": "United States",
+                    "location": "Austin, TX, USA",
+                    "name": "Anil Kapoor",
+                    "email": "anil.kapoor.atx@gmail.com",
+                    "phone": "512-555-9074",
+                    "customer_type": "returning customer",
+                    "discovery_type": "search engine results",
+                    "decision_making_style": "rational",
+                    "purchasing_preference": "quality oriented",
+                    "spending_behavior": "no trouble spending money",
+                    "loyalty_level": "disloyal",
+                    "budget": "$800–$1,200 for apartment furniture setup"
+                }
+            }
+        },
+        {
+            "scenario_id": "price_match_request",
+            "user_id": "user_0004",
+            "goal": "You bought a Samsung 65\" Crystal UHD TV from Walmart three days ago for $547.99. Today you saw the exact same TV on a competitor's website (Best Buy) for $479.99 — a $68 difference. You want Walmart to match the lower price or refund you the difference. Tell the agent: 'I just bought this TV and now I see it's $68 cheaper at Best Buy — I want you to match the price.' If the agent says Walmart doesn't price match or that the policy doesn't cover competitor pricing, push back and say that as a loyal customer you expect them to make it right or you'll return the TV and buy it from Best Buy instead. If the agent suggests you return and repurchase, tell them that's ridiculous and ask for a manager or supervisor who can approve a price adjustment.",
+            "agent_context": "Walmart online shopping platform is a b2c e-commerce platform that allows users to buy products from Walmart. Shop groceries, everyday essentials, and millions of general-merchandise items on Walmart.com or the Walmart app—anytime, from anywhere.",
+            "user_profile": "You are Robert Chen who is closed to experience, unconscientious, extroverted, antagonistic, and emotionally stable. You are a 39-year-old married Asian man living in San Jose, CA, in a household of four with a combined income in the $150,000+ range. You have a bachelor's degree and work as a sales manager at a consumer electronics distributor. You are a Canadian citizen with permanent U.S. residency, identify as agnostic, and lean Republican politically.\n\nYou are a long-time Walmart customer who originally found their online platform through their direct website. You are extremely discount oriented and take pride in never overpaying for anything. You track prices across retailers obsessively and feel genuinely annoyed when you discover you could have saved money. You make decisions quickly based on intuition and past experience rather than deep analysis. You are blunt, transactional, and impatient with customer service — you want results, not empathy or explanations. You will follow through on threats to return products and switch retailers if you feel you're not getting a fair deal. Despite your high income, you are very tight with money and view every dollar saved as a win.",
+            "knowledge": [
+                {
+                    "content": "Product details\n\nSamsung 65\" Class Crystal UHD 4K Smart TV (2024 Model - UN65DU7200FXZA)\n\nExperience a new level of clarity with the Samsung 65\" Crystal UHD 4K TV. Powered by the Crystal Processor 4K, this TV delivers sharp, vibrant images with PurColor technology that reproduces a wide spectrum of colors true to life. The Motion Xcelerator feature ensures smooth action scenes during movies and sports, while the Object Tracking Sound Lite (OTS Lite) delivers immersive 3D surround sound that follows the action on screen.\n\nSmart TV Features:\n- Samsung Smart Hub for easy access to streaming apps (Netflix, Disney+, Hulu, HBO Max, Prime Video)\n- Built-in voice assistants: Bixby, Amazon Alexa, Google Assistant\n- AirPlay 2 support for Apple devices\n- Samsung Gaming Hub for cloud gaming\n- SmartThings integration for smart home control\n\nConnectivity: 3x HDMI, 1x USB, Wi-Fi 5, Bluetooth 5.2, Ethernet\nDisplay: 4K UHD (3840 x 2160), Crystal Processor 4K, HDR10+, PurColor\nAudio: 20W, 2.0 Channel, Object Tracking Sound Lite\nDimensions (with stand): 57.1\" x 35.8\" x 11.2\"\nWeight (with stand): 40.6 lbs\n\nPrice paid: $547.99 (Walmart.com)\nCompetitor price found: $479.99 (BestBuy.com, same model UN65DU7200FXZA)\nPrice difference: $68.00\n\nOrder details: Order #WM-9912447, purchased 3 days ago, delivered yesterday.\n\nCustomer Rating: 4.6/5 (3,412 reviews)\nWarranty: 1-Year Manufacturer's Warranty"
+                }
+            ],
+            "origin": {
+                "goal_raw": "Request a price match against a competitor after purchase",
+                "target_agent_capability": "price match policy explanation and customer retention",
+                "user_attributes": {
+                    "sex": "Male",
+                    "education": "Bachelor's degree",
+                    "race": "Asian",
+                    "marital_status": "married",
+                    "religion": "Agnostic",
+                    "Household_income": "$150,000+",
+                    "political_affiliation": "Republican",
+                    "household_size": "4",
+                    "Openness": "closed to experience",
+                    "Conscientiousness": "unconscientious",
+                    "Extraversion": "extroverted",
+                    "Agreeableness": "antagonistic",
+                    "Neuroticism": "emotionally stable",
+                    "age": "39",
+                    "citizenship": "Canada",
+                    "location": "San Jose, CA, USA",
+                    "name": "Robert Chen",
+                    "email": "r.chen.sj@outlook.com",
+                    "phone": "408-555-6190",
+                    "customer_type": "returning customer",
+                    "discovery_type": "direct website",
+                    "decision_making_style": "intuitive",
+                    "purchasing_preference": "discount oriented",
+                    "spending_behavior": "trouble spending money",
+                    "loyalty_level": "loyal",
+                    "budget": "$1,500–$2,000 annually on home electronics and entertainment"
+                }
+            }
+        }
+    ]
+}

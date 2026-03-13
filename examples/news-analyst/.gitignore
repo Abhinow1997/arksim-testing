@@ -1,0 +1,44 @@
+# ── ChromaDB index (binary, large — rebuild with build_index.py) ──────────────
+agent_server/VectorDB/
+
+# ── Dataset (download from Kaggle — see README) ───────────────────────────────
+agent_server/data/articles.csv
+agent_server/data/*.csv
+
+# ── arksim generated output ───────────────────────────────────────────────────
+results/
+
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ── Virtual environments ──────────────────────────────────────────────────────
+venv/
+.venv/
+env/
+ENV/
+
+# ── Environment / secrets ─────────────────────────────────────────────────────
+.env
+.env.*
+*.env
+
+# ── OS ────────────────────────────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# ── IDE ───────────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo

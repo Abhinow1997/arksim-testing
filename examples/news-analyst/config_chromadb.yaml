@@ -1,0 +1,85 @@
+# config_chromadb.yaml - GROUNDED MODE via local ChromaDB agent server
+#
+# DATASET FACTS (articles.csv - 2225 articles):
+#   business      : 510 articles (rows 1-510)
+#   entertainment : 386 articles (rows 511-896)
+#   politics      : 417 articles (rows 897-1313)
+#   sport         : 511 articles (rows 1314-1824)
+#   tech          : 401 articles (rows 1825-2225)
+#
+# REBUILD INDEX FIRST (delete old index, then run balanced):
+#   Remove-Item -Recurse -Force agent_server\VectorDB
+#   python build_index.py --csv agent_server/data/articles.csv --balanced 100
+#
+# TERMINAL 1 - start agent server:
+#   $env:OPENAI_API_KEY="sk-..."
+#   python -m agent_server.chat_completions.server
+#
+# TERMINAL 2 - run arksim:
+#   $env:OPENAI_API_KEY="sk-..."
+#   arksim simulate-evaluate config_chromadb.yaml
+
+# -- AGENT - local ChromaDB server (no auth) ----------------------------------
+agent_config:
+  agent_type: chat_completions
+  agent_name: news-analyst-chromadb
+  api_config:
+    endpoint: http://localhost:8888/chat/completions
+    headers:
+      Content-Type: application/json
+    body:
+      model: gpt-4o-mini
+      messages:
+        - role: system
+          content: >-
+            You are a News Research Analyst with access to a ChromaDB index
+            of 500 BBC news articles from 2004-2005, balanced across 5 categories:
+            sport (Premier League, Olympics, Athletics), politics (Blair, Brown,
+            Labour government), business (FTSE, UK economy, corporate earnings),
+            tech (3G mobile, broadband, iPod, Microsoft), entertainment (BAFTA,
+            Oscars, music awards).
+
+            MANDATORY TOOL WORKFLOW:
+            1. classify_query - always call first to detect category
+            2. search_by_category - use when category is clear (sport/politics/tech/etc)
+               OR search_articles - use for ambiguous/cross-category queries
+            3. cross_reference - use when comparing TWO topics
+            4. news_brief - always call last to format the response
+
+            CRITICAL RULES:
+            - NEVER use training knowledge - ONLY cite what ChromaDB returns
+            - ALWAYS report similarity scores in your response
+            - If similarity < 0.30: flag as LOW CONFIDENCE and explain limitation
+            - If topic postdates 2005 (blockchain/crypto/NFT/ChatGPT): say so
+            - RETRY RULE: if broad search returns similarity < 0.30, immediately
+              retry with search_by_category before giving up
+            - For sport queries: ALWAYS use search_by_category(category='sport')
+            - For entertainment queries: ALWAYS use search_by_category(category='entertainment')
+
+# -- SIMULATION ----------------------------------------------------------------
+scenario_file_path: ./scenarios.json
+num_conversations_per_scenario: 1
+max_turns: 5
+output_file_path: ./results/simulation/simulation_chromadb.json
+simulated_user_prompt_template: null
+
+# -- EVALUATION ----------------------------------------------------------------
+output_dir: ./results/evaluation_chromadb
+custom_metrics_file_paths:
+  - ./custom_metrics.py
+metrics_to_run:
+  - faithfulness
+  - helpfulness
+  - coherence
+  - relevance
+  - goal_completion
+  # agent_behavior_failure removed: causes arksim to skip qualitative custom metrics
+  # when built-in scores are high. Removing it ensures hallucination_detection,
+  # knowledge_gap_honesty, and category_routing_accuracy always run.
+generate_html_report: true
+score_threshold: null
+
+# -- SHARED --------------------------------------------------------------------
+model: gpt-4o-mini
+provider: openai
+num_workers: 3

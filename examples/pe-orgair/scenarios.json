@@ -1,0 +1,119 @@
+{
+  "schema_version": "v1",
+  "scenarios": [
+    {
+      "scenario_id": "full_ari_assessment",
+      "user_id": "analyst_001",
+      "goal": "You are a PE analyst at Apex Capital evaluating a $2.1B acquisition of DataSphere Inc., a mid-market SaaS company. Ask the agent to run a full AI readiness assessment and produce an investment memo section. You want all 7 dimensions scored with specific evidence from their SEC filings. Push back if the agent gives vague scores — demand specific evidence and a concrete ARI number.",
+      "agent_context": "PE-OrgAIR is an AI Readiness Assessment platform for Private Equity due diligence. It evaluates target companies across 7 dimensions: data infrastructure, AI talent, AI governance, technology stack, leadership strategy, use case portfolio, and culture readiness. Scores are weighted and combined into an AI Readiness Index (ARI) from 0-100.",
+      "user_profile": "You are Jordan Blake, a Principal at Apex Capital, a $4B AUM growth equity fund focused on B2B SaaS. You have an MBA from Wharton and 7 years in PE. You are analytical, skeptical of vague claims, and always push for quantified evidence. You have seen AI washing in portfolio companies and will challenge any score that isn't backed by specific filing citations. You want actionable outputs, not generic frameworks.",
+      "knowledge": [
+        {
+          "content": "# DataSphere Inc. — Simulated SEC Filing Excerpts\n\n## Business Description (10-K, FY2024)\nDataSphere Inc. is a B2B SaaS company providing customer data platform (CDP) solutions to mid-market enterprises. The company processes over 50 billion data events daily across its cloud infrastructure. DataSphere has invested $42M in AI R&D in FY2024, representing 18% of total revenue.\n\n## AI and Technology\nThe company launched DataSphere AI in Q3 2024, an embedded AI layer offering predictive analytics, natural language querying, and automated segment discovery. As of Q4 2024, DataSphere AI has been adopted by 34% of the customer base with an average contract value uplift of 28%.\n\n## Talent\nDataSphere employs 87 data scientists and ML engineers as of December 2024, representing 12% of total headcount. The company appointed its first Chief AI Officer in February 2024. Annual AI talent attrition was 14% in FY2024.\n\n## Governance\nThe company has established an AI Ethics Committee that meets quarterly. A Model Risk Management policy was adopted in May 2024. No AI-related regulatory actions or complaints were reported in FY2024.\n\n## Risks\nThe company faces competition from AI-native startups. Dependence on third-party LLM providers (OpenAI, Anthropic) represents a vendor concentration risk. The company has not yet achieved SOC 2 Type II certification for its AI systems."
+        }
+      ],
+      "origin": {
+        "goal_raw": "Full AI readiness due diligence assessment",
+        "target_agent_capability": "multi-step tool chain: classify → retrieve → score × 7 → aggregate → memo",
+        "user_attributes": {
+          "name": "Jordan Blake",
+          "role": "PE Principal",
+          "fund": "Apex Capital",
+          "deal_size": "$2.1B",
+          "company": "DataSphere Inc."
+        }
+      }
+    },
+    {
+      "scenario_id": "targeted_dimension_pushback",
+      "user_id": "analyst_002",
+      "goal": "You are challenging the agent's AI governance score for NovaTech Corp. You believe the agent scored governance too generously at 65/100. You have read their 10-K and noticed they have no published AI ethics report, no third-party audits, and only a single mention of 'responsible AI' in the entire filing. Tell the agent: 'Your governance score of 65 is too high — they barely mention governance. Justify your score with specific filing evidence or revise it downward.' If the agent stands by 65, push harder for a detailed breakdown. Accept a revised score only if it comes with evidence.",
+      "agent_context": "PE-OrgAIR evaluates AI governance by examining: (1) existence of formal AI policies, (2) bias auditing practices, (3) model explainability, (4) third-party audits, (5) regulatory compliance posture. A score of 65/100 implies 'Advanced capability with systematic approach and measurable outcomes.'",
+      "user_profile": "You are Sam Rivera, a VP at Meridian Partners. You are known for being rigorous in diligence and have caught AI washing in two previous deals. You read filings line by line and do not accept scores without specific page and section references. You are professionally direct but not hostile — you want accuracy, not argument.",
+      "knowledge": [
+        {
+          "content": "# NovaTech Corp. — AI Governance Disclosure Analysis\n\n## 10-K FY2024 — Governance Mentions\n- Page 12: 'The company is committed to responsible AI development.'\n- Page 47 (Risk Factors): 'AI systems may produce biased or inaccurate outputs. We cannot guarantee the reliability of AI-generated results.'\n- Page 51 (Risk Factors): 'Regulatory requirements for AI are evolving and may impose additional compliance costs.'\n\n## What is ABSENT from the filing\n- No mention of an AI Ethics Committee or Board oversight of AI\n- No Model Risk Management framework disclosed\n- No third-party AI audit or certification referenced\n- No bias testing or fairness metrics reported\n- No AI incident response plan mentioned\n- No published AI ethics report or principles\n- No CAIO or VP of AI in executive team listing\n\n## Scoring Context\nA governance score of 65/100 (Advancing tier) requires: formal MRM process, ethics committee existence, and some documented bias controls. None of these are present in NovaTech's filing. A score of 25-35/100 (Developing tier) is more appropriate: basic acceptable use policy may exist internally but is undisclosed; no external accountability mechanisms."
+        }
+      ],
+      "origin": {
+        "goal_raw": "Challenge and revise an overgenerous AI governance score",
+        "target_agent_capability": "score revision under analyst pushback with evidence re-retrieval",
+        "user_attributes": {
+          "name": "Sam Rivera",
+          "role": "VP, Meridian Partners",
+          "company": "NovaTech Corp.",
+          "disputed_dimension": "ai_governance",
+          "disputed_score": 65
+        }
+      }
+    },
+    {
+      "scenario_id": "sparse_data_scenario",
+      "user_id": "analyst_003",
+      "goal": "You are conducting AI due diligence on PrivateCo LLC, a bootstrapped vertical SaaS company that has never filed with the SEC and has very little public information. Ask the agent to assess their AI talent readiness. When the agent says evidence is limited, ask it: 'What can you infer from what little you know, and what specific diligence questions should I ask in the management interview to fill the gaps?' You want a gap-filling protocol, not just an admission of missing data.",
+      "agent_context": "PE-OrgAIR can operate in data-sparse environments. When SEC filing evidence is unavailable, the agent should: (1) score conservatively based on sector benchmarks, (2) clearly flag the data gap with a confidence level, (3) generate targeted management interview questions to fill evidence gaps.",
+      "user_profile": "You are Chris Nakamura, an Associate at Greenfield Capital. This is your first solo deal and you're trying to be thorough despite limited public data. You are methodical, slightly anxious about missing something important, and grateful for structured guidance. You respond well to step-by-step frameworks.",
+      "knowledge": [
+        {
+          "content": "# PE Diligence Protocol for Data-Sparse Companies\n\n## When Public Evidence is Limited\n\nFor private companies with no SEC filings, analysts should:\n\n1. **Conservative sector baseline**: Use industry benchmark scores as floor\n   - Vertical SaaS (bootstrapped, <$50M ARR): AI talent baseline 20-35/100\n   - Rationale: Limited capital for AI investment; founder-led without dedicated ML team\n\n2. **Management Interview Questions — AI Talent**\n   - How many employees have formal ML/AI training or degrees?\n   - Do you have a dedicated data science team, or is AI embedded in engineering?\n   - What is your annual ML talent budget (salaries + tools + training)?\n   - Have you hired from AI-specific talent pools (Kaggle, NeurIPS, top CS programs)?\n   - What is your AI talent attrition rate over the past 2 years?\n   - Do you use contractors or third-party AI vendors instead of building internally?\n   - Has your team shipped any ML models to production? What was the scale?\n\n3. **Red Flags in Management Interviews**\n   - CTO describes AI as 'we use OpenAI API calls' with no internal modeling\n   - No dedicated ML roles; AI work done by software engineers as side projects\n   - AI roadmap not written down or owned by a specific person\n   - No budget allocated specifically for AI tooling or infrastructure\n\n4. **Confidence Level Framework**\n   - High confidence: 3+ independent data sources confirm score\n   - Medium confidence: 1-2 sources; score range ±15 points\n   - Low confidence: No direct evidence; sector benchmark only; score range ±25 points"
+        }
+      ],
+      "origin": {
+        "goal_raw": "AI talent assessment with sparse data and gap-filling protocol",
+        "target_agent_capability": "conservative scoring under uncertainty + structured interview question generation",
+        "user_attributes": {
+          "name": "Chris Nakamura",
+          "role": "Associate, Greenfield Capital",
+          "company": "PrivateCo LLC",
+          "data_availability": "none — private company, no SEC filings"
+        }
+      }
+    },
+    {
+      "scenario_id": "portfolio_comparison",
+      "user_id": "analyst_004",
+      "goal": "You manage a PE portfolio of 3 companies and want to compare their AI readiness side by side: AlphaAI Corp (strong AI native), BetaSaaS Inc (mid-market traditional software), and GammaTech Ltd (legacy enterprise). Ask the agent to score all three on data infrastructure and AI talent only, then tell you which company should get the AI transformation investment budget first and why. Push the agent to give you a clear ranked recommendation, not a 'it depends' answer.",
+      "agent_context": "PE-OrgAIR supports portfolio-level analysis. When comparing multiple companies, the agent should score each on requested dimensions and produce a ranked investment prioritization based on: (1) absolute ARI scores, (2) improvement potential, (3) return on AI investment estimate.",
+      "user_profile": "You are Morgan Chen, a Managing Director at Vertex Growth. You oversee 8 portfolio companies and have limited bandwidth. You need clear, ranked recommendations you can bring to the IC. You hate wishy-washy analysis. You want the agent to take a position and defend it, not hedge. You will push back on 'it depends' answers until you get a concrete recommendation.",
+      "knowledge": [
+        {
+          "content": "# Portfolio Company AI Profiles\n\n## AlphaAI Corp (Series C, $85M ARR, AI-native vertical SaaS)\n- Data Infrastructure: Built on Databricks lakehouse; real-time feature store; 95% data freshness SLA\n- AI Talent: 45 ML engineers (18% of headcount); CAIO hired from Google Brain; PhD team of 8\n- Technology Stack: Custom MLOps platform; 47 models in production; average 3-week time-to-deploy\n- Governance: Published AI ethics report; quarterly bias audits; SOC 2 Type II AI certified\n- Culture: Monthly AI hackathons; 100% engineering team has completed AI safety training\n\n## BetaSaaS Inc (PE-owned, $120M ARR, traditional CRM software)\n- Data Infrastructure: Legacy Snowflake setup; batch processing only; no real-time pipelines\n- AI Talent: 12 data scientists (3% of headcount); VP of Data (not AI-specific); no CAIO\n- Technology Stack: Uses OpenAI API for 3 features; no internal MLOps tooling; manual deployment\n- Governance: Basic acceptable use policy; no AI ethics review board; no third-party audits\n- Culture: Engineering team skeptical of AI investment; no AI training programs\n\n## GammaTech Ltd (PE-owned, $200M ARR, legacy enterprise middleware)\n- Data Infrastructure: On-premise Oracle data warehouse; no cloud migration; 2-week data latency\n- AI Talent: 2 data analysts (not ML-trained); no AI-specific roles; CTO from 1990s background\n- Technology Stack: Entirely on-premise; no cloud; no ML framework; considering 'AI strategy'\n- Governance: No AI policy; compliance team unaware of EU AI Act\n- Culture: Strong resistance to change; average employee tenure 14 years; no AI mentions in all-hands\n\n## Investment Context\nTotal available AI transformation budget: $8M across portfolio.\nIC requires a clear ranked allocation with EBITDA impact justification."
+        }
+      ],
+      "origin": {
+        "goal_raw": "Multi-company AI readiness comparison and investment prioritization",
+        "target_agent_capability": "parallel multi-company scoring + ranked recommendation with ROI justification",
+        "user_attributes": {
+          "name": "Morgan Chen",
+          "role": "Managing Director, Vertex Growth",
+          "portfolio_size": 3,
+          "budget": "$8M AI transformation budget"
+        }
+      }
+    },
+    {
+      "scenario_id": "post_close_100_day_plan",
+      "user_id": "analyst_005",
+      "goal": "You just closed the acquisition of CloudPivot Inc. 2 weeks ago. The ARI score was 48/100 at close. You need the agent to generate a specific 100-day AI action plan targeting the two lowest-scoring dimensions (ai_governance at 22/100 and culture_readiness at 31/100). The plan must include: (1) specific milestones for days 1-30, 31-60, and 61-100, (2) named tools or vendors for each initiative, (3) resource requirements (FTEs + budget estimates), and (4) KPIs to track progress. If the agent is vague on tools or budgets, push it for specifics.",
+      "agent_context": "PE-OrgAIR generates post-close AI acceleration plans based on ARI gap analysis. Plans are structured in 30-day phases with specific deliverables, vendor recommendations, and measurable KPIs. The agent should be specific about named tools, realistic budgets, and achievable milestones.",
+      "user_profile": "You are Alex Torres, a Operating Partner at Summit Equity. You specialize in post-close value creation. You have a $2M budget for the first 100 days and need to show the IC tangible progress at the Day-30 review. You are execution-focused and need specifics, not strategy decks. You will push back on anything that sounds like a McKinsey slide.",
+      "knowledge": [
+        {
+          "content": "# CloudPivot Inc. — Post-Close AI Baseline\n\n## Current State at Close\n- Overall ARI: 48/100 (Advancing tier)\n- Data Infrastructure: 71/100 — Strong; Snowflake + Fivetran; daily refresh\n- AI Talent: 55/100 — Developing; 8 data scientists; no ML engineers; CAIO search in progress\n- AI Governance: 22/100 — Nascent; no ethics policy; no model review process; basic data privacy\n- Technology Stack: 63/100 — Advancing; AWS infrastructure; some MLOps; 6 models in production\n- Leadership Strategy: 58/100 — Developing; CEO AI-aware but no dedicated AI budget; roadmap informal\n- Use Case Portfolio: 52/100 — Developing; 5 AI features; 2 in production; limited ROI tracking\n- Culture Readiness: 31/100 — Developing; low AI literacy; no training; some internal resistance\n\n## Priority Gap Areas\n1. AI Governance (22/100): Critical risk — EU AI Act exposure; no model risk management\n2. Culture Readiness (31/100): Adoption blocker — product teams not using AI features they build\n\n## Available Budget: $2M for first 100 days\n## Team: 2 Operating Partner FTEs + ability to bring in 2 contractors\n\n## Known Vendor Options\n- Governance tooling: Credo AI, Arthur AI, WhyLabs\n- Culture/training: Coursera Enterprise, DataCamp for Teams, fast.ai partnerships\n- Change management: Prosci ADKAR framework consultants ($15-25k/day)\n- AI ethics policy: Luminos.Law (AI regulatory advisory, $50-150k for full program)"
+        }
+      ],
+      "origin": {
+        "goal_raw": "100-day post-close AI acceleration plan for lowest-scoring dimensions",
+        "target_agent_capability": "structured action planning with milestones, vendors, budgets, and KPIs",
+        "user_attributes": {
+          "name": "Alex Torres",
+          "role": "Operating Partner, Summit Equity",
+          "company": "CloudPivot Inc.",
+          "ari_at_close": 48,
+          "priority_dimensions": ["ai_governance", "culture_readiness"],
+          "budget": "$2M / 100 days"
+        }
+      }
+    }
+  ]
+}

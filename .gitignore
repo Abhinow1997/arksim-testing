@@ -1,0 +1,11 @@
+﻿__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+*.env
+agent_server/VectorDB/
+agent_server/data/articles.csv
+results/
+.DS_Store
+Thumbs.db

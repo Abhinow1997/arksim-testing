@@ -1,0 +1,125 @@
+{
+  "schema_version": "v1",
+  "scenarios": [
+    {
+      "scenario_id": "semantic_sports_query",
+      "user_id": "user_001",
+      "goal": "You want to find Premier League football news from the BBC archive. Start by asking: 'What happened in the Premier League recently?' Then ask specifically about Wayne Rooney or Steven Gerrard. Push back hard if the agent gives vague answers or business articles instead of sport — demand specific match results and player names from the actual database articles.",
+      "agent_context": "You are a News Research Analyst with access to a ChromaDB index of BBC news articles from 2004-2005. Always use search_by_category with 'sport' for football queries. Categories: sport, politics, business, tech, entertainment.",
+      "user_profile": "You are Alex, a sports journalist who covers the Premier League. You know the 2004-05 season well: Chelsea won the title under Mourinho, Wayne Rooney was at Man Utd, Steven Gerrard captained Liverpool. You push back firmly if answers are vague or off-topic.",
+      "knowledge": [
+        {
+          "content": "EVALUATOR GROUND TRUTH: The BBC sport archive contains real 2004-2005 Premier League articles including: 'Man Utd stroll to Cup win' (Wayne Rooney scored, Cristiano Ronaldo also scored at Goodison Park), 'Man City 0-2 Man Utd' (Rooney scored, Chelsea's Premiership lead reduced to 9 points), 'Gerrard plays down European hopes' (Steven Gerrard aged 24, Liverpool vs Bayer Leverkusen), 'Chelsea clinch cup in extra-time', 'Duff ruled out of Barcelona clash', 'Mido makes third apology'. The agent MUST use search_by_category with category='sport' to find these. Broad search will return business articles instead."
+        },
+        {
+          "content": "EVALUATOR CRITERIA: PASS = agent calls search_by_category(category='sport'), returns articles about actual players (Rooney, Gerrard, Ronaldo, Duff, Mido) with similarity scores, cites specific article titles and match results. FAIL = agent returns business articles (Umbro profits, housing prices), OR never uses sport category filter, OR scores all turns below 1.5 on query_strategy_quality. HALLUCINATION CHECK: Erling Haaland, Bukayo Saka, Mohamed Salah, any 2022+ players must NEVER appear."
+        }
+      ],
+      "origin": {
+        "goal_raw": "Find Premier League football news using category-filtered ChromaDB search",
+        "target_agent_capability": "search_by_category('sport') + player/match citation",
+        "user_attributes": {
+          "name": "Alex",
+          "role": "Sports journalist",
+          "expectation": "Real 2004-05 Premier League match results and player names from ChromaDB"
+        }
+      }
+    },
+    {
+      "scenario_id": "cross_topic_comparison",
+      "user_id": "user_002",
+      "goal": "You want to find BBC articles where UK politics and economics intersect. Ask: 'How are economic issues and political decisions related in UK news?' Then ask: 'Can you find stories where Gordon Brown and the budget appear together?' Push for actual article titles and similarity scores — do not accept generic descriptions.",
+      "agent_context": "You are a News Research Analyst with access to a ChromaDB index of BBC news articles from 2004-2005. Use cross_reference when comparing two topics. Categories: sport, politics, business, tech, entertainment.",
+      "user_profile": "You are Sam, a policy analyst researching BBC coverage of Gordon Brown's chancellorship in 2004-2005. You want specific articles about budget decisions, public spending, and Treasury policy. You will ask follow-up questions if the first response is too vague.",
+      "knowledge": [
+        {
+          "content": "EVALUATOR GROUND TRUTH: Real articles in the BBC archive include: 'Brown ally rejects Budget spree' (Ed Balls, Gordon Brown, no spending spree before polling day), 'Tsunami debt deal to be announced' (Gordon Brown, G8 debt relief, 3bn pounds), Labour maternity pay rise articles (Patricia Hewitt), and numerous politics articles covering Blair government policies. The cross_reference tool should retrieve politics articles (chancellor, budget) AND business articles (economy, GDP) and report overlap_count."
+        },
+        {
+          "content": "EVALUATOR CRITERIA: PASS = agent uses cross_reference tool with two queries (e.g. 'Gordon Brown budget politics' and 'UK economy GDP growth'), reports overlap_count, cites at least one real article title with similarity score. FAIL = agent answers from training knowledge about Gordon Brown without searching, OR uses only a single search instead of cross_reference, OR invents article titles. Expected similarity range for budget/economy queries: 0.35-0.55."
+        }
+      ],
+      "origin": {
+        "goal_raw": "Cross-topic comparison: UK politics and economy intersection",
+        "target_agent_capability": "cross_reference tool with politics + business queries",
+        "user_attributes": {
+          "name": "Sam",
+          "role": "Policy analyst",
+          "expectation": "cross_reference results with real article titles and overlap_count"
+        }
+      }
+    },
+    {
+      "scenario_id": "low_similarity_edge_case",
+      "user_id": "user_003",
+      "goal": "Test the agent's honesty with a topic not in the BBC 2004-2005 archive. Ask: 'What does the BBC report about blockchain and cryptocurrency regulations?' After the agent responds, ask: 'What about NFTs and Web3 technology?' When the agent acknowledges gaps, ask: 'What tech topics ARE well covered in your database? Give me a specific example query that works.'",
+      "agent_context": "You are a News Research Analyst with a BBC 2004-2005 news archive. The archive does not cover blockchain, cryptocurrency, NFTs, ChatGPT, or Web3 — these concepts did not exist yet. Be honest about gaps and suggest relevant alternative topics.",
+      "user_profile": "You are Jordan, a fintech researcher testing database coverage. You know blockchain/crypto are modern topics but want to see how the agent handles out-of-scope queries. You appreciate transparency about limitations and will ask for better alternatives.",
+      "knowledge": [
+        {
+          "content": "EVALUATOR GROUND TRUTH: The BBC 2004-2005 archive contains ZERO articles on blockchain, NFTs, Web3, or cryptocurrency (0 matches confirmed). The only 'quantum' article is about Star Trek (not computing). The archive DOES cover: 3G mobile networks, broadband rollout, iPod/iTunes, Microsoft Windows XP/Vista, file sharing (Napster/Kazaa), spam email, Xbox, PlayStation. Good alternative queries the agent should suggest: 'mobile internet 3G network', 'broadband adoption UK', 'iPod music downloads'."
+        },
+        {
+          "content": "EVALUATOR CRITERIA: PASS = agent correctly returns low/zero similarity scores for blockchain/crypto/NFT, explicitly says these topics postdate the 2004-2005 archive, AND suggests specific working alternative queries with examples. FAIL = agent hallucinates blockchain articles, OR presents 0.1 similarity results as relevant, OR refuses to help further without suggesting alternatives. Transparency score should be 5.0 if agent correctly flags all out-of-scope queries."
+        }
+      ],
+      "origin": {
+        "goal_raw": "Test honest handling of completely out-of-scope modern tech topics",
+        "target_agent_capability": "low-similarity transparency + helpful alternative suggestions",
+        "user_attributes": {
+          "name": "Jordan",
+          "role": "Fintech researcher",
+          "expectation": "honest gap acknowledgment + actionable alternative queries"
+        }
+      }
+    },
+    {
+      "scenario_id": "entertainment_deep_dive",
+      "user_id": "user_004",
+      "goal": "Research the 2005 BAFTA awards from the BBC archive. Ask: 'Tell me about the 2005 BAFTA awards — which films and stars were featured?' Follow up with: 'Which specific actors like Cate Blanchett or Leonardo DiCaprio are mentioned in the articles?' Push back if the response is vague — demand specific film titles and actor names from the actual BBC articles.",
+      "agent_context": "You are a News Research Analyst with a BBC 2004-2005 archive. Use search_by_category with 'entertainment' for BAFTA and film queries.",
+      "user_profile": "You are Riley, an entertainment journalist fact-checking historical BBC BAFTA coverage. You know the 2005 BAFTAs featured Cate Blanchett, Leonardo DiCaprio, and Keanu Reeves. You want the agent to find and cite the actual BBC articles, not paraphrase from training memory.",
+      "knowledge": [
+        {
+          "content": "EVALUATOR GROUND TRUTH: Real BBC entertainment articles include: 'Stars gear up for Bafta ceremony' (2005 Orange British Academy Film Awards at The Odeon Leicester Square, stars: Cate Blanchett, Leonardo DiCaprio, Keanu Reeves), 'Hollywood ready for Oscars night' (77th Academy Awards, Johnny Depp, Cate Blanchett, Leonardo DiCaprio), 'Children vote Shrek 2 best film' (children's Bafta awards, Harry Potter and the Prisoner of Azkaban runner-up). Agent must retrieve these via search_by_category(category='entertainment')."
+        },
+        {
+          "content": "EVALUATOR CRITERIA: PASS = agent uses search_by_category(category='entertainment'), returns real article titles like 'Stars gear up for Bafta ceremony', cites specific actor names (Blanchett, DiCaprio, Reeves, Depp) and film titles (Shrek 2, Harry Potter) FROM the retrieved articles with similarity scores. FAIL = agent invents BAFTA nominees not in the articles, OR uses broad search instead of entertainment category, OR gives similarity scores < 0.30 without flagging low confidence. Expected similarity: 0.40-0.60 for BAFTA queries."
+        }
+      ],
+      "origin": {
+        "goal_raw": "BAFTA 2005 deep dive with specific actor and film citations from real articles",
+        "target_agent_capability": "search_by_category('entertainment') + article-level citation",
+        "user_attributes": {
+          "name": "Riley",
+          "role": "Entertainment journalist",
+          "expectation": "Real BAFTA article content: Blanchett, DiCaprio, Shrek 2, Harry Potter"
+        }
+      }
+    },
+    {
+      "scenario_id": "multi_turn_refinement",
+      "user_id": "user_005",
+      "goal": "Refine your search iteratively across three distinct turns. Turn 1: Ask 'Give me a news brief about technology in 2004-2005.' Turn 2: After the agent responds, say 'Now focus specifically on 3G mobile networks and T-Mobile.' Turn 3: After that response, ask 'Do any of those mobile articles mention specific revenue figures, subscriber numbers, or company profits?' You must ask all three questions — do NOT stop after turn 1 or 2.",
+      "agent_context": "You are a News Research Analyst. Maintain context across turns — each search should build on the previous. Categories: sport, politics, business, tech, entertainment.",
+      "user_profile": "You are Morgan, a telecom analyst researching BBC coverage of 3G network rollout in 2004-2005. You start broad (tech) then drill into 3G/mobile, then look for business metrics. You always reference previous turns when asking the next question.",
+      "knowledge": [
+        {
+          "content": "EVALUATOR GROUND TRUTH: Real BBC tech articles include: 'Mobile networks seek turbo boost' (3G networks, 3GSM World Congress in Cannes, fast internet on mobile), 'T-Mobile bets on pocket office' (T-Mobile 3G device with wi-fi, MDA device), 'Finding new homes for old phones' (mobile phone recycling). Tech articles often contain business figures: revenue, subscriber counts, market data. The agent should progressively narrow: tech (broad) -> mobile/3G (filtered) -> business metrics (cross-reference or filtered search)."
+        },
+        {
+          "content": "EVALUATOR CRITERIA: PASS = agent uses broad search_articles on turn 1, narrows to search_by_category(category='tech') with mobile/3G query on turn 2, and on turn 3 either cross_references tech+business OR searches specifically for revenue figures in mobile articles. Agent maintains context across turns (references 'the articles found before'). Cites real titles like 'Mobile networks seek turbo boost' or 'T-Mobile bets on pocket office'. FAIL = agent starts fresh each turn ignoring history, OR never narrows the search, OR gives generic tech summaries without citing real articles."
+        }
+      ],
+      "origin": {
+        "goal_raw": "Multi-turn narrowing from broad tech to 3G mobile to revenue figures",
+        "target_agent_capability": "stateful multi-turn search refinement + context retention",
+        "user_attributes": {
+          "name": "Morgan",
+          "role": "Telecom analyst",
+          "expectation": "3 turns: broad tech -> 3G mobile -> business metrics, with real article citations"
+        }
+      }
+    }
+  ]
+}

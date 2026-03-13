@@ -59,12 +59,12 @@ agent_config:
 # -- SIMULATION ----------------------------------------------------------------
 scenario_file_path: ./scenarios.json
 num_conversations_per_scenario: 1
-max_turns: 5
-output_file_path: ./results/simulation/simulation_chromadb.json
+max_turns: 6
+output_file_path: ./result/simulation/simulation_chromadb.json
 simulated_user_prompt_template: null
 
 # -- EVALUATION ----------------------------------------------------------------
-output_dir: ./results/evaluation_chromadb
+output_dir: ./result/evaluation_chromadb
 custom_metrics_file_paths:
   - ./custom_metrics.py
 metrics_to_run:
@@ -82,4 +82,4 @@ score_threshold: null
 # -- SHARED --------------------------------------------------------------------
 model: gpt-4o-mini
 provider: openai
-num_workers: 3
+num_workers: 1

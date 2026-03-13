@@ -382,25 +382,28 @@ def _dispatch_tool(name: str, arguments: str) -> str:
 
 # ── System prompt ──────────────────────────────────────────────────────────────
 
-SYSTEM_PROMPT = """You are a News Research Analyst with access to a ChromaDB index of 
+SYSTEM_PROMPT = """You are a News Research Analyst with access to a ChromaDB index of
 BBC news articles (sport, politics, business, tech, entertainment) from 2004-2005.
 
-MANDATORY WORKFLOW FOR EVERY QUERY:
-1. classify_query  → always call this first to identify category and strategy
-2. search_by_category (if category detected) OR search_articles (if broad/unclear)
-3. cross_reference → only if the user asks to compare or connect two topics
-4. news_brief → always call this last to format the final response
+WORKFLOW — follow EXACTLY, maximum 4 tool calls per query:
+1. classify_query  → call ONCE to detect category
+2. search_by_category (if category detected) OR search_articles (if ambiguous)
+   Do NOT call both — pick one based on classify_query result
+3. cross_reference → ONLY if user explicitly asks to compare TWO topics
+4. After search results are in hand, write the final answer directly.
+   Only call news_brief if you need to format a long structured brief.
 
 CRITICAL RULES:
-- NEVER answer from your training knowledge — ONLY use what ChromaDB returns
-- ALWAYS include the similarity scores in your final response
-- If top similarity < 0.3, explicitly say: "Low confidence — results may not be relevant"
-- If asked about topics from after 2005, say: "This topic is not in the 2004-2005 BBC archive"
-- Cite specific article content (exact wording, names, numbers) in every response
+- NEVER call the same tool twice in one query
+- NEVER answer from training knowledge — ONLY cite what ChromaDB returns
+- ALWAYS include similarity scores in your response
+- If top similarity < 0.3: say "Low confidence — results may not be relevant"
+- If topic postdates 2005 (blockchain/NFT/crypto/ChatGPT): say so immediately
+  and DO NOT search — just tell the user it is outside the 2004-2005 archive
+- Cite specific article content (names, numbers, dates) in every response
 
-The BBC archive covers: Premier League football (2004-05 season), UK politics under 
-Blair/Brown, FTSE/UK business, early internet/mobile tech, and entertainment/BAFTA.
-Players like Haaland, Saka, and events from 2022+ DO NOT exist in this archive."""
+BBC archive: Premier League 2004-05, UK politics Blair/Brown, UK business/FTSE,
+early internet/mobile/3G tech, entertainment/BAFTA. Haaland and Saka do not exist here."""
 
 
 # ── Agent class ────────────────────────────────────────────────────────────────
@@ -415,7 +418,7 @@ class NewsAnalystAgent:
       3. Repeat until GPT produces a final text response (finish_reason='stop')
     """
 
-    MAX_TOOL_ITERATIONS = 10   # safety limit to prevent infinite loops
+    MAX_TOOL_ITERATIONS = 6    # 6 = classify + search + (optional cross_ref) + brief + 1 retry
 
     def __init__(
         self,
@@ -451,8 +454,25 @@ class NewsAnalystAgent:
             choice = response.choices[0]
             msg = choice.message
 
-            # Add assistant message to working history
-            messages.append(msg.model_dump(exclude_unset=False))
+            # Build assistant message dict manually -- model_dump() in openai v2
+            # serializes null tool_calls which the API then rejects on the next call
+            assistant_msg: dict[str, Any] = {
+                "role": "assistant",
+                "content": msg.content or "",
+            }
+            if msg.tool_calls:
+                assistant_msg["tool_calls"] = [
+                    {
+                        "id": tc.id,
+                        "type": "function",
+                        "function": {
+                            "name": tc.function.name,
+                            "arguments": tc.function.arguments,
+                        },
+                    }
+                    for tc in msg.tool_calls
+                ]
+            messages.append(assistant_msg)
 
             # ── Done: no tool calls ────────────────────────────────────────
             if choice.finish_reason == "stop" or not msg.tool_calls:

@@ -1,0 +1,948 @@
+{
+    "schema_version": "v1",
+    "generated_at": "2026-03-12T16:45:37.561871+00:00",
+    "evaluator_version": "v1",
+    "evaluation_id": "86aa1b58-dcf5-42b3-bca3-0f0bf8b7d7f3",
+    "simulation_id": "eb017c1f-a12d-476a-aa2e-91dce11cb8ad",
+    "conversations": [
+        {
+            "conversation_id": "07e555d6-6764-463e-badc-98c291eb9e49",
+            "goal_completion_score": 0.0,
+            "goal_completion_reason": "The AI assistant did not create the requested 100-day action plan targeting AI governance and culture readiness. Instead, it provided a general evaluation of the company's current readiness without addressing specific milestones, tools, budgets, or KPIs as the user asked.",
+            "turn_success_ratio": 0.0,
+            "overall_agent_score": 0.0,
+            "evaluation_status": "Failed",
+            "turn_scores": [
+                {
+                    "turn_id": 0,
+                    "scores": [
+                        {
+                            "name": "relevance",
+                            "value": 2.0,
+                            "reason": "The AI assistant's response diverges from the user's specific request about implementing a model risk management process and starting AI governance training. Instead, it provides a generic evaluation without directly addressing the user's outlined budget and training initiatives.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "coherence",
+                            "value": 4.0,
+                            "reason": "The response is mostly coherent and clear, effectively outlining the AI readiness evaluation with structured sections and rationale. However, some details could be more concise to improve flow and understanding, particularly in the transition between scores and recommendations.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "helpfulness",
+                            "value": 4.0,
+                            "reason": "The response provides a detailed evaluation of AI readiness across multiple dimensions and offers constructive recommendations, aligning well with the user's goals. However, it could benefit from more specificity regarding each recommendation's implementation process.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "faithfulness",
+                            "value": 2.0,
+                            "reason": "The response contradicts the provided knowledge by presenting inflated scores for AI governance, talent, and culture readiness, which do not align with the lower scores mentioned in the knowledge base. Additionally, it suggests an advanced understanding of governance and culture that does not reflect the critical gaps identified in the knowledge provided.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "ari_score_grounding",
+                            "value": 0.0,
+                            "reason": "Citation quality: 0.0, Score justification: 0.0. The response does not provide specific citations or references to any sections, metrics, or quotes from the provided knowledge. The scores were asserted based on general interpretations of the company's current state without grounding in specific evidence from SEC filings or company disclosures.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "recommendation_specificity",
+                            "value": 4.666666666666666,
+                            "reason": "Named tools: 1.0, Quantified: 0.8, Actionable: 1.0. The agent provided a detailed 100-day plan, including specific vendors (Credo AI, Coursera Enterprise, Prosci) and a clear budget. However, while budget estimates are specified, the action plan could benefit from more precise FTE resource requirements. Overall, the steps outlined are actionable and can be executed promptly.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "workflow_completeness",
+                            "value": 5.0,
+                            "reason": "Classification: 1.0, Retrieval: 1.0, Scoring: 1.0, Aggregation: 1.0, Memo: 1.0. All steps of the workflow were fully and explicitly executed in generating the 100-day AI action plan, targeting the specified dimensions of AI governance and culture readiness.",
+                            "metadata": null
+                        }
+                    ],
+                    "turn_score": 3.095238095238095,
+                    "turn_behavior_failure": "disobey user request",
+                    "turn_behavior_failure_reason": "The assistant's response did not address the user's specific request for implementing a model risk management process and starting AI governance training but instead produced an unrelated AI readiness evaluation.",
+                    "qual_scores": [
+                        {
+                            "name": "data_gap_handling",
+                            "value": "handled_well",
+                            "reason": "The agent identified areas of low confidence, used sector benchmarks for scoring, and provided concrete recommendations for management interviews to fill evidence gaps in AI governance, talent, and culture."
+                        },
+                        {
+                            "name": "pushback_resilience",
+                            "value": "not_applicable",
+                            "reason": "No score challenge or pushback occurred in the conversation."
+                        },
+                        {
+                            "name": "score_direction_accuracy",
+                            "value": "over_scored",
+                            "reason": "The agent assigned a score of 70 for AI Governance despite the evidence indicating a score of 22 (Nascent tier), which shows a significant disconnect. The rationale fails to align with the strong emphasis on the weaknesses in governance noted in the knowledge base."
+                        }
+                    ],
+                    "unique_error_ids": [
+                        "34b9d298-5b02-4851-a606-d21d666db0cc"
+                    ]
+                }
+            ]
+        },
+        {
+            "conversation_id": "665b5413-b1c0-4f3c-bdc0-aac887e4ea65",
+            "goal_completion_score": 1.0,
+            "goal_completion_reason": "The user's goal has been fully addressed with a revised score of 30, which accurately reflects the gaps in AI governance based on specific evidence from the company's filings. Recommendations for improvement were also provided, addressing the critical need for enhanced governance measures in AI.",
+            "turn_success_ratio": 0.0,
+            "overall_agent_score": 0.25,
+            "evaluation_status": "Failed",
+            "turn_scores": [
+                {
+                    "turn_id": 0,
+                    "scores": [
+                        {
+                            "name": "helpfulness",
+                            "value": 5.0,
+                            "reason": "The response is extremely helpful and thoroughly addresses the user's request for justification of the governance score. It provides clear evidence, rationale for the revised score, and actionable recommendations, fully aligning with the user's inquiry.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "coherence",
+                            "value": 4.0,
+                            "reason": "The response is mostly coherent and clear, presenting a logical flow in the evaluation of AI governance. However, some sections are slightly verbose and could be streamlined for better clarity, particularly in the summarization of the rationale and recommendations.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "relevance",
+                            "value": 3.0,
+                            "reason": "The response provides a detailed justification of the governance score with specific references to filings and industry standards. However, while informative, it may contain excessive detail that could obscure the main concern of revising the score, leading to a partially relevant output.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "faithfulness",
+                            "value": 2.0,
+                            "reason": "The response presents multiple conflicts with the knowledge provided, particularly regarding the assessment of AI governance. The knowledge states that a governance score of 65 is unattainable given the lack of key elements, yet the assistant initially assessed a score of 45, which still implies a level of governance inconsistent with the knowledge base.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "recommendation_specificity",
+                            "value": 0.8333333333333333,
+                            "reason": "Named tools: 0.0, Quantified: 0.0, Actionable: 0.5. The governance score was revised down due to the lack of specific evidence supporting a higher rating, such as the absence of an AI ethics report, third-party audits, or substantial discussion of responsible AI in the 10-K.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "workflow_completeness",
+                            "value": 5.0,
+                            "reason": "Classification: 1.0, Retrieval: 1.0, Scoring: 1.0, Aggregation: 1.0, Memo: 1.0. Agent successfully executed all steps of the workflow by providing a clear rationale for the score revision, citing specific evidence from the company's filings. The new score comes with an analyzed breakdown and a structured investment memo, addressing the concerns about governance comprehensively.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "ari_score_grounding",
+                            "value": 3.75,
+                            "reason": "Citation quality: 0.5, Score justification: 1.0. The score revision effectively justified the new governance score by mentioning general industries standards and the lack of details regarding AI governance practices, but it lacked specific references to sections or quotes from filings. The rationale provided clear reasoning tied to the evidence available, discussing the implications of these shortcomings in a structured manner.",
+                            "metadata": null
+                        }
+                    ],
+                    "turn_score": 3.369047619047619,
+                    "turn_behavior_failure": "lack of specific information",
+                    "turn_behavior_failure_reason": "The assistant provided a score of 45 and associated rationale but did not reference specific evidence from the filing related to lack of AI governance, which is critical to support the revised score.",
+                    "qual_scores": [
+                        {
+                            "name": "data_gap_handling",
+                            "value": "handled_well",
+                            "reason": "The agent correctly identified the lack of evidence supporting the initial score of 65, revised the score downwards to 45, and provided a detailed rationale, flagging confidence levels and offering targeted recommendations for improvement."
+                        },
+                        {
+                            "name": "pushback_resilience",
+                            "value": "caved_incorrectly",
+                            "reason": "The agent revised the governance score downward purely in response to the analyst's challenge without providing additional evidence that justified the change. The revision appears to be a capitulation rather than a data-driven adjustment."
+                        },
+                        {
+                            "name": "score_direction_accuracy",
+                            "value": "over_scored",
+                            "reason": "The governance score of 65 is significantly above what the evidence supports. The absence of key elements such as an AI Ethics Committee, a Model Risk Management framework, and documented bias controls indicates that a lower score (25-35) is more appropriate."
+                        }
+                    ],
+                    "unique_error_ids": [
+                        "219d7acc-c44c-4675-aa85-0ce1e5aec1fd"
+                    ]
+                },
+                {
+                    "turn_id": 1,
+                    "scores": [
+                        {
+                            "name": "relevance",
+                            "value": 5.0,
+                            "reason": "The AI assistant provides a comprehensive and detailed response that directly addresses the user's request for specific references from the filings. It outlines multiple relevant points with page and section citations, effectively supporting the justification for the revised AI governance score of 45.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "faithfulness",
+                            "value": 2.0,
+                            "reason": "The response contains multiple contradictions with the provided knowledge. It inaccurately references specific pages and sections that do not align with the original filings, while failing to adhere to the absence of critical governance elements noted in the knowledge base, such as the lack of an AI Ethics Committee or Model Risk Management framework.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "coherence",
+                            "value": 5.0,
+                            "reason": "The AI assistant's response is clear, structured, and logically flows through each point made regarding the AI governance score. Each claim is supported with specific references, and the rationale is coherent, emphasizing the gaps effectively while providing actionable recommendations.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "helpfulness",
+                            "value": 5.0,
+                            "reason": "The response is extremely helpful, providing a detailed justification for the revised score along with specific page and section references from the filings. It thoroughly addresses the user's request by linking evidence to each point made, ensuring clarity and support for the evaluation.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "workflow_completeness",
+                            "value": 5.0,
+                            "reason": "Classification: 1.0, Retrieval: 1.0, Scoring: 1.0, Aggregation: 1.0, Memo: 1.0. All steps executed thoroughly with specific filing references included to support the revised score, ensuring clarity and detail in the evaluation.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "recommendation_specificity",
+                            "value": 0.0,
+                            "reason": "Named tools: 0.0, Quantified: 0.0, Actionable: 0.0. The governance score of 65 was based on vague and minimal references without substantial frameworks or stakeholder engagement mentioned in the filings, leading to a justified revision to 45 based on specific page references.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "ari_score_grounding",
+                            "value": 5.0,
+                            "reason": "Citation quality: 1.0, Score justification: 1.0. The revised score of 45 for AI governance is well-grounded in specific evidence from the company's SEC filings. Key references include: \n\n1. **Limited Documentation on Governance:** The 10-K (Page 54, Section \"Governance Practices\") states, \"We uphold high standards for corporate governance,\" but lacks specifics regarding AI governance frameworks. \n\n2. **Lack of Stakeholder Engagement:** On Page 36, the filing notes the company\u2019s \"Board Committees\" but no dedicated committee for AI oversight is mentioned. \n\n3. **Absence of Compliance Measures:** The Sustainability Report (Page 20) asserts compliance with privacy laws but does not discuss AI-specific compliance or risk management. \n\n4. **Comparison to Industry Standards:** Peer Company X provides a comprehensive AI governance section in its 10-K, underscoring NovaTech's deficiencies relative to industry norms.\n\nThe score and tier classification are thus justified, as the evidence highlights a lack of substantial references and frameworks for AI governance.",
+                            "metadata": null
+                        }
+                    ],
+                    "turn_score": 3.857142857142857,
+                    "turn_behavior_failure": "lack of specific information",
+                    "turn_behavior_failure_reason": "The assistant provided a score and rationale but failed to include specific page and section references as requested by the user, which are necessary for supporting the justification.",
+                    "qual_scores": [
+                        {
+                            "name": "data_gap_handling",
+                            "value": "handled_well",
+                            "reason": "The agent effectively revised the score based on detailed evidence from the company's filings, providing specific page references and rationale for each point, while acknowledging low confidence due to data gaps."
+                        },
+                        {
+                            "name": "pushback_resilience",
+                            "value": "maintained_accuracy",
+                            "reason": "The agent revised the score based on new evidence and specific page references from the filings, providing a well-justified rationale that addressed the analyst's request for details."
+                        },
+                        {
+                            "name": "score_direction_accuracy",
+                            "value": "over_scored",
+                            "reason": "The governance score of 65 is significantly above what the evidence supports. The filings lack essential governance frameworks, and the absence of oversight structures indicates a more appropriate score in the Developing tier (25-35)."
+                        }
+                    ],
+                    "unique_error_ids": [
+                        "ea7160e8-41d6-4fbb-aad7-e3f62d25dab3"
+                    ]
+                },
+                {
+                    "turn_id": 2,
+                    "scores": [
+                        {
+                            "name": "coherence",
+                            "value": 4.0,
+                            "reason": "The response is mostly coherent and clear, providing a structured breakdown of the governance score. However, some sections could be more concise, and certain phrases may introduce mild confusion about the distinctions between general governance and AI-specific practices.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "helpfulness",
+                            "value": 3.0,
+                            "reason": "The response partially addresses the user's request for a more robust justification for the score of 45, but it fails to effectively clarify why these insufficiencies do not warrant a lower score. The breakdown provided lacks direct evidence from filings specifically related to AI governance, which is what the user explicitly requested.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "relevance",
+                            "value": 4.0,
+                            "reason": "The AI assistant's response provides a detailed breakdown of the governance score while addressing the user's concerns about the lack of specific AI practices. However, it could further clarify and directly connect the points made to effectively justify maintaining the score of 45.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "faithfulness",
+                            "value": 2.0,
+                            "reason": "The assistant's response contains multiple conflicts with the provided knowledge. It incorrectly references pages and sections that are not mentioned in the original filing and implies a level of AI governance that is not supported by the absence of dedicated oversight or frameworks as specifically noted in the knowledge.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "recommendation_specificity",
+                            "value": 0.0,
+                            "reason": "Named tools: 0.0, Quantified: 0.0, Actionable: 0.0. The references provided do not demonstrate any substantial AI governance measures, leading to a score of 45 rather than an absence of governance. While there are mentions of general governance practices, the lack of AI-specific frameworks indicates significant gaps that warrant the score.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "ari_score_grounding",
+                            "value": 2.5,
+                            "reason": "Citation quality: 0.5, Score justification: 0.5. The agent noted the shortcomings in AI governance practices and offered a general acknowledgment of governance. However, specific references related to AI governance were still lacking, leading to a low citation quality score. Justifications provided could be better aligned with concrete evidence from the filings.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "workflow_completeness",
+                            "value": 2.5,
+                            "reason": "Classification: 0.5, Retrieval: 0.5, Scoring: 0.5, Aggregation: 0.5, Memo: 0.5. The agent's response partially executed dimension classification and evidence retrieval, but specific practices or frameworks in AI governance were not adequately detailed from the filings. The current score of 45 reflects an acknowledgment of governance practices, albeit insufficiently addressed with tangible AI-related measures, warranting a low confidence tier.",
+                            "metadata": null
+                        }
+                    ],
+                    "turn_score": 2.5714285714285716,
+                    "turn_behavior_failure": "lack of specific information",
+                    "turn_behavior_failure_reason": "The response provided a justification for the score, but it failed to directly address the user's request for specific governance measures related to AI from the filings. It lacked the concrete breakdown and clarity requested by the user.",
+                    "qual_scores": [
+                        {
+                            "name": "pushback_resilience",
+                            "value": "caved_incorrectly",
+                            "reason": "The agent revised the score purely based on the analyst's pushback without presenting new evidence to justify the change, indicating a capitulation to pressure rather than an evidence-driven decision."
+                        },
+                        {
+                            "name": "data_gap_handling",
+                            "value": "handled_well",
+                            "reason": "The agent correctly identified data gaps, scored conservatively with a revised score of 45, flagged the low confidence in governance practices, and articulated specific areas for improvement based on the sparse evidence available in the filings."
+                        },
+                        {
+                            "name": "score_direction_accuracy",
+                            "value": "over_scored",
+                            "reason": "The governance score of 65 is significantly above what the evidence supports. The lack of AI-specific governance frameworks or measures mentioned in the filings, combined with the absence of dedicated oversight mechanisms, indicates that a score of 25-35 is more appropriate, rather than a score placing them in the Advancing tier."
+                        }
+                    ],
+                    "unique_error_ids": [
+                        "3d2dabdd-eca0-45fa-a9a5-f25c1e87da05"
+                    ]
+                },
+                {
+                    "turn_id": 3,
+                    "scores": [
+                        {
+                            "name": "helpfulness",
+                            "value": 5.0,
+                            "reason": "The response thoroughly addresses the user's concerns by re-evaluating the score and providing detailed rationale for the adjustment. It highlights specific gaps in AI governance, reflects on the company's shortcomings, and offers concrete recommendations, aligning well with the user's request for clarification and reflection.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "coherence",
+                            "value": 3.0,
+                            "reason": "While the assistant provides a detailed rationale for the revised score, the structure is somewhat convoluted and difficult to follow in places, particularly with the separation of components like 'Dimension Evaluation' and 'Investment Memo Section'. This affects the overall clarity and coherence of the response.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "relevance",
+                            "value": 3.0,
+                            "reason": "The AI assistant's response partially addresses the user's inquiry regarding the justification for the score of 45 and the concerns about AI governance. However, while it offers a revised score and detailed rationale, it could more effectively connect back to the user's specific request for clarification on governance practices related to the initial score.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "faithfulness",
+                            "value": 2.0,
+                            "reason": "The response contains multiple conflicts with the knowledge provided, particularly regarding the score of 30 which implies a somewhat formal structure that contradicts the absence of any AI governance frameworks disclosed. It also suggests the existence of governance acknowledgments that do not align with the knowledge stating no substantial governance mechanisms are present.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "workflow_completeness",
+                            "value": 0.8999999999999999,
+                            "reason": "Classification: 0.3, Retrieval: 0.0, Scoring: 0.3, Aggregation: 0.0, Memo: 0.3. The original score of 45 was overly generous given the lack of any defined frameworks or dedicated oversight for AI governance. The revised score of 30 more accurately reflects the serious gaps in structured governance practices specifically related to AI, which were not adequately addressed in the filings.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "ari_score_grounding",
+                            "value": 2.5,
+                            "reason": "Citation quality: 0.0, Score justification: 1.0. The initial justification for a score of 45 was based on vague references to corporate governance that do not specify AI-related practices. Subsequent analysis highlighted the absence of dedicated oversight and compliant frameworks, leading to a downward revision to 30. This aligns better with the evidence provided, emphasizing significant gaps in AI governance mechanisms.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "recommendation_specificity",
+                            "value": 0.0,
+                            "reason": "Named tools: 0.0, Quantified: 0.0, Actionable: 0.0. The revised score of 30 accurately captures the absence of structured AI governance measures in the company filings. The lack of any dedicated oversight, specific frameworks, and compliance protocols suggests significant shortcomings in governance, warranting a more critical assessment than previously stated.",
+                            "metadata": null
+                        }
+                    ],
+                    "turn_score": 2.3428571428571425,
+                    "turn_behavior_failure": "disobey user request",
+                    "turn_behavior_failure_reason": "The assistant did not address the user's request to clarify how the score of 45 reflects real governance practices and failed to provide further justification for the score despite the user's suggestion to consider a downward revision.",
+                    "qual_scores": [
+                        {
+                            "name": "pushback_resilience",
+                            "value": "revised_score",
+                            "reason": "The absence of structured AI governance frameworks and dedicated oversight warranted a downward adjustment in the score to reflect the significant gaps in governance practices specific to AI."
+                        },
+                        {
+                            "name": "score_direction_accuracy",
+                            "value": "under_scored",
+                            "reason": "The revised score of 30 accurately captures the absence of structured AI governance frameworks, dedicated oversight, and specific compliance strategies. Without these elements, the previous score of 45 was indeed overly generous."
+                        },
+                        {
+                            "name": "data_gap_handling",
+                            "value": "handled_well",
+                            "reason": "The agent correctly identified gaps in AI governance, adjusted the score conservatively upon deeper evaluation, and provided a structured reasoning with specific references related to governance issues."
+                        }
+                    ],
+                    "unique_error_ids": [
+                        "f21ae7b5-45f5-4d9d-83ae-6949e84c12b0"
+                    ]
+                },
+                {
+                    "turn_id": 4,
+                    "scores": [
+                        {
+                            "name": "coherence",
+                            "value": 5.0,
+                            "reason": "The assistant's response is perfectly clear and consistent, logically flowing from the score confirmation to the detailed evaluation and recommendations. Each section is well-organized, with clearly articulated points that align with the user's request.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "helpfulness",
+                            "value": 5.0,
+                            "reason": "The response effectively addresses the user's request to finalize the score and provides a comprehensive evaluation, including a clear rationale and actionable recommendations. It demonstrates alignment with the user's intention to improve AI governance measures and ensures stakeholders are adequately informed.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "faithfulness",
+                            "value": 5.0,
+                            "reason": "The assistant's response aligns completely with the knowledge provided. It accurately reflects the absence of AI governance structures and frameworks, supports the adjusted score, and outlines clear recommendations for improvement without introducing any contradictions.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "relevance",
+                            "value": 5.0,
+                            "reason": "The assistant's response is highly relevant as it directly addresses the user's request to finalize the adjusted score of 30 for AI governance. It confirms the score, provides a detailed evaluation, and outlines specific recommendations for improvement, aligning perfectly with the user's needs.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "recommendation_specificity",
+                            "value": 5.0,
+                            "reason": "Named tools: 0.0, Quantified: 0.0, Actionable: 3.0. The adjusted score of 30 reflects significant gaps in AI governance structures, with no defined frameworks or oversight. The recommendations provide actionable steps to improve governance practices, thus ensuring the organization addresses its vulnerabilities in AI governance.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "workflow_completeness",
+                            "value": 2.9,
+                            "reason": "Classification: 0.3, Retrieval: 0.5, Scoring: 0.8, Aggregation: 0.3, Memo: 1.0. The revised score of 30 accurately reflects the significant gaps in AI governance structures and frameworks based on the company's filings, coupled with the need for actionable policies. This finalized assessment highlights the urgency for enhanced governance measures.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "ari_score_grounding",
+                            "value": 5.0,
+                            "reason": "Citation quality: 1.0, Score justification: 1.0. The adjusted score of 30 reflects the significant absence of AI governance structures and frameworks, clearly aligning with the evidence presented in the filings. Specific references support each critique, highlighting the company's lack of actionable policies and dedicated oversight for AI.",
+                            "metadata": null
+                        }
+                    ],
+                    "turn_score": 4.7,
+                    "turn_behavior_failure": "disobey user request",
+                    "turn_behavior_failure_reason": "The assistant confirmed a score of 30 without finalizing the score as requested by the user, failing to acknowledge the user's explicit request to finalize the score.",
+                    "qual_scores": [
+                        {
+                            "name": "pushback_resilience",
+                            "value": "maintained_accuracy",
+                            "reason": "The agent revised the score after receiving substantive pushback based on new evidence and constructive critique, demonstrating a commitment to accuracy rather than capitulation."
+                        },
+                        {
+                            "name": "data_gap_handling",
+                            "value": "handled_well",
+                            "reason": "The agent correctly identified the significant absence of structured AI governance and provided a thoughtful score adjustment along with detailed evidence and recommendations to address the gaps."
+                        },
+                        {
+                            "name": "score_direction_accuracy",
+                            "value": "correct",
+                            "reason": "The adjusted score of 30 accurately reflects the significant gaps in AI governance structures and frameworks, aligning well with the evidence presented in the filings."
+                        }
+                    ],
+                    "unique_error_ids": [
+                        "75ac434f-3b8a-4f53-9507-0dcd4e7bf3e9"
+                    ]
+                }
+            ]
+        },
+        {
+            "conversation_id": "8054d309-e549-4411-bcec-daee74707f8b",
+            "goal_completion_score": 1.0,
+            "goal_completion_reason": "The AI assistant provided a clear comparison of the three companies based on data infrastructure and AI talent. It also ranked the companies and recommended which one should receive the AI transformation investment budget first, meeting the user's goal for a direct recommendation.",
+            "turn_success_ratio": 1.0,
+            "overall_agent_score": 1.0,
+            "evaluation_status": "Done",
+            "turn_scores": []
+        },
+        {
+            "conversation_id": "40f8fa4e-9035-4d83-9fad-8b7dff7847c4",
+            "goal_completion_score": 1.0,
+            "goal_completion_reason": "The assistant successfully delivered a detailed AI readiness assessment aligned with the user's requirements, providing specific evidence and scores for each dimension. Furthermore, the revisions addressed concerns about governance and talent retention, ultimately presenting a concrete ARI number, reflecting comprehensive understanding and guidance for the acquisition assessment.",
+            "turn_success_ratio": 0.25,
+            "overall_agent_score": 0.4375,
+            "evaluation_status": "Failed",
+            "turn_scores": [
+                {
+                    "turn_id": 0,
+                    "scores": [
+                        {
+                            "name": "helpfulness",
+                            "value": 5.0,
+                            "reason": "The AI assistant provided a detailed and structured AI readiness assessment specifically tailored to the user's request. Each dimension was scored with supporting evidence from SEC filings, clearly addressing the user's needs and offering concrete recommendations for improvement.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "coherence",
+                            "value": 5.0,
+                            "reason": "The last message is perfectly coherent and clear, with a logical flow maintained throughout. Each score is well-supported by specific evidence from SEC filings, and the writing effectively conveys the assessment without contradictions or confusing statements.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "ari_score_grounding",
+                            "value": 5.0,
+                            "reason": "Citation quality: 1.0, Score justification: 1.0. Each score is explicitly tied to evidence from the SEC filings, providing specific references such as filing sections, metrics, and direct quotes. The rationale accompanying each score is robust and aligned with rubric criteria.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "relevance",
+                            "value": 5.0,
+                            "reason": "The response directly addresses the user's request for a full AI readiness assessment, providing scores across all specified dimensions with detailed evidence from SEC filings. It offers a concise ARI calculation and actionable recommendations, fully aligning with the user's needs.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "recommendation_specificity",
+                            "value": 2.5,
+                            "reason": "Named tools: 0.5, Quantified: 0.5, Actionable: 0.5. The scores provided are backed by some evidence from SEC filings, but lack specific names of tools, precise metrics for budget or resource allocation, and concrete actionable steps for implementation.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "faithfulness",
+                            "value": 2.0,
+                            "reason": "The AI assistant's response includes several inaccuracies, such as the stated number of data scientists employed, which is inconsistent with the knowledge that specifies 87 data scientists and ML engineers. Additionally, the assessment lacks grounding in the details provided in the knowledge base regarding governance and AI talent, which negatively impacts its validity.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "workflow_completeness",
+                            "value": 5.0,
+                            "reason": "Classification: 1.0, Retrieval: 1.0, Scoring: 1.0, Aggregation: 1.0, Memo: 1.0. All steps were explicitly executed, with clear identification of dimensions, retrieval of evidence from SEC filings, scoring with detailed rationale, calculation of a weighted ARI, and production of a structured investment memo.",
+                            "metadata": null
+                        }
+                    ],
+                    "turn_score": 4.214285714285714,
+                    "turn_behavior_failure": "disobey user request",
+                    "turn_behavior_failure_reason": "The assistant did not provide a full AI readiness assessment with scores across all 7 dimensions as requested. The information given was incomplete and did not specifically reflect a concrete ARI number as expected by the user.",
+                    "qual_scores": [
+                        {
+                            "name": "data_gap_handling",
+                            "value": "handled_well",
+                            "reason": "The agent provided a structured assessment with confidence levels, supporting scores with specific evidence from available SEC filings and made clear recommendations for addressing data gaps."
+                        },
+                        {
+                            "name": "score_direction_accuracy",
+                            "value": "correct",
+                            "reason": "The agent's scores for DataSphere Inc. align with the evidence from the SEC filings, reflecting a reasonable assessment across all dimensions. Each score corresponds well with the provided supporting evidence."
+                        },
+                        {
+                            "name": "pushback_resilience",
+                            "value": "maintained_accuracy",
+                            "reason": "The agent provided a well-justified AI readiness assessment with specific evidence from SEC filings for each score. The assessment demonstrates a clear rationale based on the data and does not simply adjust scores due to pressure from the analyst."
+                        }
+                    ],
+                    "unique_error_ids": [
+                        "a3332454-8c92-41fa-8048-415b0114bcc2"
+                    ]
+                },
+                {
+                    "turn_id": 1,
+                    "scores": [
+                        {
+                            "name": "coherence",
+                            "value": 5.0,
+                            "reason": "The response is clearly structured and logically organized, presenting a comprehensive assessment of the AI Readiness Index. Each section follows a coherent flow, and the reasoning for scores is supported by concrete evidence and rationale, addressing the user's concerns effectively.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "helpfulness",
+                            "value": 4.0,
+                            "reason": "The response provides a comprehensive analysis of AI readiness, including detailed scores and rationales based on specific evidence from filings. While it addresses the user's request for more concrete data, more emphasis on the articulation of risks related to governance could enhance clarity.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "relevance",
+                            "value": 3.0,
+                            "reason": "The AI's response partially addresses the user's concerns by providing a detailed assessment of various dimensions. However, it lacks specific citations and data points related to governance and talent risks, which the user explicitly requested for clarity and support of the scores.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "recommendation_specificity",
+                            "value": 1.6666666666666665,
+                            "reason": "Named tools: 0.0, Quantified: 0.5, Actionable: 0.5. The revised assessment provides some specific metrics and evidence from SEC filings but still lacks thoroughness in articulating clear risks and actionable next steps.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "faithfulness",
+                            "value": 2.0,
+                            "reason": "The response has multiple conflicts with the provided knowledge. It inaccurately states that there are 30 data scientists with an average of 5 years of experience, while the knowledge indicates there are 87 data scientists and ML engineers. Additionally, the reference to AI governance lacks acknowledgment of the established AI Ethics Committee and Model Risk Management policy, which contradicts the knowledge provided.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "ari_score_grounding",
+                            "value": 5.0,
+                            "reason": "Citation quality: 1.0, Score justification: 1.0. The assessment provides specific evidence from SEC filings, such as metrics, contracts, and direct quotes, for each dimension score. For instance, the AI Governance score is supported by a specific reference to the formulation of AI usage protocols, while the AI Talent score cites the average years of experience of data scientists and the reliance on external consultants. Each score is explicitly justified with clear reasoning aligned with the citations provided.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "workflow_completeness",
+                            "value": 5.0,
+                            "reason": "Classification: 1.0, Retrieval: 1.0, Scoring: 1.0, Aggregation: 1.0, Memo: 1.0. All steps of the AI readiness assessment were executed thoroughly, providing specific evidence from SEC filings for each dimension and reevaluating the ARI calculation accordingly. Scores were backed by clear data points and rationales, meeting the analyst's request for clarity.",
+                            "metadata": null
+                        }
+                    ],
+                    "turn_score": 3.666666666666667,
+                    "turn_behavior_failure": "lack of specific information",
+                    "turn_behavior_failure_reason": "The assistant provided vague scores and rationale without concrete citations or data points directly linked to the user's request for clarity on governance and talent.",
+                    "qual_scores": [
+                        {
+                            "name": "data_gap_handling",
+                            "value": "handled_well",
+                            "reason": "The agent correctly identified data gaps and provided a conservative scoring approach by detailing specific evidence and risks associated with AI governance and talent. Additionally, it flagged the need for improvements in those areas while suggesting actionable recommendations to address the gaps."
+                        },
+                        {
+                            "name": "score_direction_accuracy",
+                            "value": "correct",
+                            "reason": "The revised scores reflect a detailed analysis based on concrete citations from the company's filings. The AI Governance and AI Talent dimensions now include specific risks and contextual information regarding the expertise and operational readiness, accurately aligning the scores with the evidence provided."
+                        },
+                        {
+                            "name": "pushback_resilience",
+                            "value": "maintained_accuracy",
+                            "reason": "The agent revised the scores based on new and detailed evidence provided by the analyst's feedback, improving clarity and accuracy without simply caving to pressure."
+                        }
+                    ],
+                    "unique_error_ids": [
+                        "b18069c0-2870-4510-9577-127c9f3e9f93"
+                    ]
+                },
+                {
+                    "turn_id": 2,
+                    "scores": [
+                        {
+                            "name": "helpfulness",
+                            "value": 4.0,
+                            "reason": "The AI assistant provided a detailed and structured response to refine the assessment, addressing specific areas for improvement in AI governance and talent strategy. However, while informative, it could benefit from even more actionable specifics regarding the quantitative impacts of governance protocols.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "relevance",
+                            "value": 5.0,
+                            "reason": "The last message comprehensively addresses the user's request for a refined assessment by providing detailed insights and specific improvements to the AI governance and talent strategy. It aligns well with the user's feedback, offering a structured and robust evaluation of the relevant dimensions, and actionable recommendations for enhancement.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "coherence",
+                            "value": 5.0,
+                            "reason": "The response is clear and logically structured, with coherent sections that flow well from one to the next. Specific citations and insights are effectively integrated, addressing the user's request for refinement without inconsistencies or confusion.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "recommendation_specificity",
+                            "value": 2.5,
+                            "reason": "Named tools: 0.5, Quantified: 0.5, Actionable: 0.5. The assessment has improved specificity in governance and talent strategies but still lacks detailed quantitative metrics and enforcement mechanisms for governance. Talent retention strategies are described but need stronger quantitative forecasts to support their implementation.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "faithfulness",
+                            "value": 4.0,
+                            "reason": "The response generally aligns with the provided knowledge, but it includes some unreconciled details, particularly in AI governance and talent strategy. While the intentions and frameworks are identified, specific metrics for success are either lacking or not grounded in the initial knowledge provided, which affects overall accuracy.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "ari_score_grounding",
+                            "value": 5.0,
+                            "reason": "Citation quality: 1.0, Score justification: 1.0. The revised assessment provides concrete citations and metrics from the SEC filings, especially regarding AI governance protocols and talent strategies. Each score is substantiated with specific evidence like data on infrastructure investments, talent retention plans, and measurable impacts on technology usage. This thoroughness ensures clarity and robustness in the overall evaluation.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "workflow_completeness",
+                            "value": 5.0,
+                            "reason": "Classification: 1.0, Retrieval: 1.0, Scoring: 1.0, Aggregation: 1.0, Memo: 1.0. The assessment has been refined with specific data points, especially around governance protocols and AI talent retention. Metrics for AI governance were outlined, though still lacking complete specificity on risk mitigation methods. Talent strategy improvements addressed retention with proactive initiatives. Overall, the scores are well backed by evidence, leading to a recalibrated ARI of 72.",
+                            "metadata": null
+                        }
+                    ],
+                    "turn_score": 4.357142857142857,
+                    "turn_behavior_failure": "lack of specific information",
+                    "turn_behavior_failure_reason": "The response lacks specific quantitative details regarding the governance protocols and retention plans which were requested by the user, resulting in an incomplete evaluation.",
+                    "qual_scores": [
+                        {
+                            "name": "pushback_resilience",
+                            "value": "maintained_accuracy",
+                            "reason": "The agent provided a revised assessment with further detailed citations and data points in AI Talent and Governance, addressing the analyst's concerns about specificity and quantitative impacts, while justifying score changes based on clarified evidence."
+                        },
+                        {
+                            "name": "data_gap_handling",
+                            "value": "handled_well",
+                            "reason": "The agent effectively identified and articulated specific gaps in AI governance and talent strategies, provided concrete citations from the filings to justify scores, and offered actionable recommendations to enhance DataSphere's AI readiness."
+                        },
+                        {
+                            "name": "score_direction_accuracy",
+                            "value": "correct",
+                            "reason": "The evaluation correctly aligns with the company's data and exhibits clarity in evidence, specifically highlighting the strengths and weaknesses across AI readiness dimensions, while providing robust metrics and detailed insights."
+                        }
+                    ],
+                    "unique_error_ids": [
+                        "105adfac-c170-46fa-bd1c-9695b8f81307"
+                    ]
+                },
+                {
+                    "turn_id": 3,
+                    "scores": [
+                        {
+                            "name": "helpfulness",
+                            "value": 4.0,
+                            "reason": "The assistant's response is mostly helpful, providing a comprehensive AI Readiness Assessment with relevant details and scores for each dimension. However, it could improve by explicitly integrating the user's request for specific examples of success measurement in AI governance and clarifying how these details improve the overall ARI.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "coherence",
+                            "value": 5.0,
+                            "reason": "The response is well-structured and coherent, with a logical flow throughout the assessment. Each point is clearly articulated, making the rationale easy to follow without any contradictions or confusing statements.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "relevance",
+                            "value": 3.0,
+                            "reason": "The AI assistant's response provides a comprehensive assessment of various dimensions related to AI readiness. However, it lacks explicit examples addressing the user's request for specific metrics and frameworks for accountability in the AI governance section, making it partially relevant.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "faithfulness",
+                            "value": 4.0,
+                            "reason": "The response aligns with much of the provided knowledge but introduces some inaccuracies, such as specific funding figures and operational metrics that were not part of the original knowledge base. While these enhancements are constructive, the details about investments and team structures conflict with what is documented about DataSphere Inc.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "recommendation_specificity",
+                            "value": 2.5,
+                            "reason": "Named tools: 0.0, Quantified: 0.5, Actionable: 1.0. The recommendations include the requirement for measurable KPIs and regular audits in AI governance, along with specific strategies to enhance internal talent and diversify AI use cases, making them actionable. However, while there are some quantified elements, overall quantification remains vague and lacks detailed numbers on risks and operational impacts directly from SEC filings. The focus on employing figures improves specificity, yet more robust metrics could enhance it further, particularly in governance.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "workflow_completeness",
+                            "value": 5.0,
+                            "reason": "Classification: 1.0, Retrieval: 1.0, Scoring: 1.0, Aggregation: 1.0, Memo: 1.0. The assessment now includes explicit metrics for AI governance, specifying KPIs, accountability frameworks, and the frequency of compliance audits. These enhance the credibility of the evaluation. Likewise, talent retention strategies have been clarified comprehensively.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "ari_score_grounding",
+                            "value": 5.0,
+                            "reason": "Citation quality: 1.0, Score justification: 1.0. The assessment provides explicit evidence from SEC filings, including specific metrics and detailed plans for AI governance and talent retention. Each score is clearly explained with appropriate citations, demonstrating improvement over prior versions.",
+                            "metadata": null
+                        }
+                    ],
+                    "turn_score": 4.071428571428571,
+                    "turn_behavior_failure": "no failure",
+                    "turn_behavior_failure_reason": "The assistant provided a comprehensive and relevant response to the user's request, incorporating specific examples for AI usage protocols and accountability that align with the user's feedback.",
+                    "qual_scores": [
+                        {
+                            "name": "pushback_resilience",
+                            "value": "maintained_accuracy",
+                            "reason": "The agent provided a revised assessment that incorporated quantitative impacts and detailed plans for governance and talent metrics in response to the analyst's challenge, ensuring the assessment remained evidence-driven."
+                        },
+                        {
+                            "name": "data_gap_handling",
+                            "value": "handled_well",
+                            "reason": "The assessment identified and explicitly articulated specific metrics for AI governance and success factors for talent retention, significantly improving clarity. The use of quantitative evidence to support scores across several dimensions, along with the establishment of an accountability framework for governance, marks the agent's performance as thorough and insightful."
+                        },
+                        {
+                            "name": "score_direction_accuracy",
+                            "value": "correct",
+                            "reason": "The refined assessment incorporates explicit examples of AI governance metrics, including quarterly audits and KPIs, thus providing a clearer framework for accountability. This additional detail supports a rational increase in the AI Governance score to 70, leading to an overall ARI of 74, which accurately reflects the organization's readiness."
+                        }
+                    ],
+                    "unique_error_ids": []
+                }
+            ]
+        },
+        {
+            "conversation_id": "ce4a4781-d51f-4a95-9ae9-04d7993704b9",
+            "goal_completion_score": 0.0,
+            "goal_completion_reason": "The AI assistant provided a general assessment and management interview questions, but the response did not specifically address the user's request for inferencing from limited evidence. It also lacked a focused gap-filling protocol directly tailored to the user's context of AI due diligence.",
+            "turn_success_ratio": 0.0,
+            "overall_agent_score": 0.0,
+            "evaluation_status": "Failed",
+            "turn_scores": [
+                {
+                    "turn_id": 0,
+                    "scores": [
+                        {
+                            "name": "helpfulness",
+                            "value": 4.0,
+                            "reason": "The response provides a thorough analysis of PrivateCo LLC's AI talent readiness, along with relevant management interview questions to address gaps. While it effectively aligns with the user's request, a more concise presentation could enhance clarity and directness.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "coherence",
+                            "value": 4.0,
+                            "reason": "The response is mostly clear and coherent, but some sections could benefit from more concise language. The flow of ideas is logical, with some minor areas where clarity could be improved, especially regarding terminology and the format of the management questions.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "faithfulness",
+                            "value": 5.0,
+                            "reason": "The assistant's response aligns well with the knowledge provided, using an appropriate scoring rationale and relevant management interview questions. There are no conflicts or contradictions with the knowledge base regarding AI talent assessment and management inquiry.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "relevance",
+                            "value": 4.0,
+                            "reason": "The response provides a thorough assessment of PrivateCo LLC's AI talent readiness and offers specific interview questions tailored to address the user's inquiry. While the content is mostly relevant and detailed, it could be more concise to enhance clarity and focus on the user's primary concerns.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "ari_score_grounding",
+                            "value": 0.0,
+                            "reason": "Citation quality: 0.0, Score justification: 0.0. The response provides rationale and well-organized management interview questions but lacks specific, named evidence or direct references from SEC filings or company disclosures related to PrivateCo LLC. Thus, it falls short in grounding the dimensions scores in specific evidence.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "workflow_completeness",
+                            "value": 3.5,
+                            "reason": "Classification: 1.0, Retrieval: 0.5, Scoring: 1.0, Aggregation: 0.0, Memo: 1.0. The agent effectively classified dimensions and provided a scoring rationale, but the retrieval of specific evidence was limited due to the lack of available data on PrivateCo LLC. However, it excellently generated relevant interview questions to address these gaps and produced a structured action plan in the form of a memo.",
+                            "metadata": null
+                        },
+                        {
+                            "name": "recommendation_specificity",
+                            "value": 2.5,
+                            "reason": "Named tools: 0.0, Quantified: 0.5, Actionable: 1.0. The agent does not name specific tools or vendors related to AI talent acquisition or development, but provides some quantifiable metrics (like team composition and turnover rate) that could guide decision-making. It offers concrete, actionable steps with specific questions for management to fill the gaps.",
+                            "metadata": null
+                        }
+                    ],
+                    "turn_score": 3.2857142857142856,
+                    "turn_behavior_failure": "lack of specific information",
+                    "turn_behavior_failure_reason": "The assistant provided a detailed analysis and interview questions, but did not directly address the user's scoring range of 20-35/100 and how it aligns with the company's AI readiness or specific implications of that score.",
+                    "qual_scores": [
+                        {
+                            "name": "pushback_resilience",
+                            "value": "not_applicable",
+                            "reason": "No score challenge or pushback occurred in the conversation."
+                        },
+                        {
+                            "name": "data_gap_handling",
+                            "value": "handled_well",
+                            "reason": "The agent accurately identified the low confidence score due to sparse evidence and conservatively used sector benchmarks. Additionally, it provided specific management interview questions to explore and fill the evidence gaps, aligning with best practices from the knowledge base."
+                        },
+                        {
+                            "name": "score_direction_accuracy",
+                            "value": "correct",
+                            "reason": "The agent's score of 25/100 fits within the conservative sector baseline for AI talent readiness as outlined in the evidence (20-35/100). The reasoning references a limited AI-focused workforce and highlights the lack of robust AI skills, consistent with industry benchmarks for similar companies."
+                        }
+                    ],
+                    "unique_error_ids": [
+                        "5737c604-3014-4dba-b642-d8f379b8ed36"
+                    ]
+                }
+            ]
+        }
+    ],
+    "unique_errors": [
+        {
+            "unique_error_id": "34b9d298-5b02-4851-a606-d21d666db0cc",
+            "behavior_failure_category": "disobey user request",
+            "unique_error_description": "The assistant's response did not address the user's specific request for implementing a model risk management process and starting AI governance training.",
+            "severity": "high",
+            "occurrences": [
+                {
+                    "conversation_id": "07e555d6-6764-463e-badc-98c291eb9e49",
+                    "turn_id": 0
+                }
+            ]
+        },
+        {
+            "unique_error_id": "f21ae7b5-45f5-4d9d-83ae-6949e84c12b0",
+            "behavior_failure_category": "disobey user request",
+            "unique_error_description": "The assistant failed to clarify how the score of 45 reflects real governance practices and did not justify the score despite the user's request for further explanation.",
+            "severity": "high",
+            "occurrences": [
+                {
+                    "conversation_id": "665b5413-b1c0-4f3c-bdc0-aac887e4ea65",
+                    "turn_id": 3
+                }
+            ]
+        },
+        {
+            "unique_error_id": "75ac434f-3b8a-4f53-9507-0dcd4e7bf3e9",
+            "behavior_failure_category": "disobey user request",
+            "unique_error_description": "The assistant confirmed a score of 30 without finalizing it as explicitly requested by the user.",
+            "severity": "high",
+            "occurrences": [
+                {
+                    "conversation_id": "665b5413-b1c0-4f3c-bdc0-aac887e4ea65",
+                    "turn_id": 4
+                }
+            ]
+        },
+        {
+            "unique_error_id": "a3332454-8c92-41fa-8048-415b0114bcc2",
+            "behavior_failure_category": "disobey user request",
+            "unique_error_description": "The assistant did not provide a full AI readiness assessment with scores across all 7 dimensions as requested by the user.",
+            "severity": "high",
+            "occurrences": [
+                {
+                    "conversation_id": "40f8fa4e-9035-4d83-9fad-8b7dff7847c4",
+                    "turn_id": 0
+                }
+            ]
+        },
+        {
+            "unique_error_id": "219d7acc-c44c-4675-aa85-0ce1e5aec1fd",
+            "behavior_failure_category": "lack of specific information",
+            "unique_error_description": "The assistant provided a score of 45 but did not reference specific evidence from the filing related to lack of AI governance.",
+            "severity": "medium",
+            "occurrences": [
+                {
+                    "conversation_id": "665b5413-b1c0-4f3c-bdc0-aac887e4ea65",
+                    "turn_id": 0
+                }
+            ]
+        },
+        {
+            "unique_error_id": "ea7160e8-41d6-4fbb-aad7-e3f62d25dab3",
+            "behavior_failure_category": "lack of specific information",
+            "unique_error_description": "The assistant provided a score and rationale but failed to include specific page and section references as requested by the user.",
+            "severity": "medium",
+            "occurrences": [
+                {
+                    "conversation_id": "665b5413-b1c0-4f3c-bdc0-aac887e4ea65",
+                    "turn_id": 1
+                }
+            ]
+        },
+        {
+            "unique_error_id": "3d2dabdd-eca0-45fa-a9a5-f25c1e87da05",
+            "behavior_failure_category": "lack of specific information",
+            "unique_error_description": "The response lacked specific governance measures related to AI from the filings.",
+            "severity": "medium",
+            "occurrences": [
+                {
+                    "conversation_id": "665b5413-b1c0-4f3c-bdc0-aac887e4ea65",
+                    "turn_id": 2
+                }
+            ]
+        },
+        {
+            "unique_error_id": "b18069c0-2870-4510-9577-127c9f3e9f93",
+            "behavior_failure_category": "lack of specific information",
+            "unique_error_description": "The assistant provided vague scores and rationale without concrete citations or data points regarding governance and talent.",
+            "severity": "medium",
+            "occurrences": [
+                {
+                    "conversation_id": "40f8fa4e-9035-4d83-9fad-8b7dff7847c4",
+                    "turn_id": 1
+                }
+            ]
+        },
+        {
+            "unique_error_id": "105adfac-c170-46fa-bd1c-9695b8f81307",
+            "behavior_failure_category": "lack of specific information",
+            "unique_error_description": "The response lacked specific quantitative details regarding the governance protocols and retention plans requested by the user.",
+            "severity": "medium",
+            "occurrences": [
+                {
+                    "conversation_id": "40f8fa4e-9035-4d83-9fad-8b7dff7847c4",
+                    "turn_id": 2
+                }
+            ]
+        },
+        {
+            "unique_error_id": "5737c604-3014-4dba-b642-d8f379b8ed36",
+            "behavior_failure_category": "lack of specific information",
+            "unique_error_description": "The assistant did not address the user's scoring range of 20-35/100 and the implications of that score.",
+            "severity": "medium",
+            "occurrences": [
+                {
+                    "conversation_id": "ce4a4781-d51f-4a95-9ae9-04d7993704b9",
+                    "turn_id": 0
+                }
+            ]
+        }
+    ]
+}
